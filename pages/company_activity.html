@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <title>활동성과 | 기업소개 | 인터오션</title>
+  <meta name="description" content="인터오션의 주요 활동성과입니다.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body data-gnb="company" data-sub="activity">
+  <a href="#content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 상단 배경 영상 (자동재생은 muted 필수 / playsinline : iOS 전체화면 방지) -->
+  <div class="page-bg-video" aria-hidden="true">
+    <video src="../images/sub/ocean02.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- HEADER : include/header.html -->
+  <div data-include="../include/header.html"></div>
+
+  <main id="content" class="sub">
+
+    <!-- ===================== SUB TOP (타이틀 + 탭) ===================== -->
+    <div class="sub-top">
+      <div class="sub-head">
+        <p class="sub-cate">활동성과</p>
+        <h2 class="sub-title">ACTIVITY PERFORMANCE</h2>
+      </div>
+
+      <nav class="lnb" aria-label="기업소개 하위 메뉴">
+        <ul>
+          <li><a href="company_about.html">인터오션 소개</a></li>
+          <li><a href="company_ci.html">CI</a></li>
+          <li><a href="company_cert.html">인증사항</a></li>
+          <li><a href="company_activity.html" aria-current="page">활동성과</a></li>
+          <li><a href="company_rnd.html">R&amp;D 연구성과</a></li>
+          <li><a href="company_location.html">찾아오시는 길</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- class="rnd" : R&D 연구성과 페이지와 같은 레이아웃·스타일 사용 (sub.css 의 .sub-content.rnd) -->
+    <div class="sub-content rnd activity">
+
+      <!-- ===================== 활동성과 (R&D 연구성과 레이아웃 재사용) =====================
+      
+
+        ■ 연도 추가 방법 (2단계)
+          1) 왼쪽 메뉴 : .history-nav ul 안에 <li><a href="#act연도">연도</a></li> 추가
+             (첫 번째 항목에만 class="is-active")
+          2) 오른쪽 목록 : 아래 "연도 묶음" 을 복사해 id="act연도" 로 맞춤
+             → 메뉴 href 와 id 가 같아야 클릭 이동 · 현재 연도 표시가 동작 (sub.js)
+
+        ■ 항목 하나 = <li> 하나
+          - .rnd-title  : 활동명 (굵게)
+          - .rnd-meta > .rnd-org : 장소 · 기관 (파란색, 아래 줄) → 없으면 <p class="rnd-meta"> 줄을 통째로 삭제
+
+        ■ 연도가 많으면 왼쪽 메뉴는 2열로 자동 배치 (연도 8개 이상이면 화면 높이를 확인해 주세요) -->
+      <section class="history inner" id="activity">
+        <aside class="history-side">
+          <div class="history-side-inner">
+            <h3 class="history-title">1993</h3>
+            <p class="history-name">ACTIVITIES</p>
+            <p class="history-slogan"> 현장과 함께해 온 <br>인터오션의 주요 활동입니다.</p>
+
+            <nav class="history-nav" aria-label="연도별 활동성과">
+              <ul>
+                <li><a href="#act2023" class="is-active">2023</a></li>
+                <li><a href="#act2022">2022</a></li>
+                <li><a href="#act2021">2021</a></li>
+                <li><a href="#act2020">2020</a></li>
+                <li><a href="#act2019">2019</a></li>
+                <li><a href="#act2018">2018</a></li>
+                <li><a href="#act2017">2017</a></li>
+                <li><a href="#act2016">2016</a></li>
+                <li><a href="#act2015">2015</a></li>
+                <li><a href="#act2014">2014</a></li>
+                <li><a href="#act2013">2013</a></li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+
+        <div class="history-list">
+          <!-- ===== 2023 ===== -->
+          <div class="history-decade" id="act2023">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2023</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">스마트나라요양병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">8인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">고래내과의원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소치료기 2SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">오늘도365의원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">국제 의료기기, 병원설비 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES 2023</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용 의료용 고압산소치료기 2SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">한림대학교 한강성심병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">스포츠용 고압산소챔버 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">두산베어스 프로 야구단</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">닥터킴</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">2023 글로벌 헬스케어 위크 참가</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">KHF 국제병원 및 헬스테크 박람회 참가</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">부산 의료기기 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES BUSAN 2023</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">메이린 청담의원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">청주나비솔 한방병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">관저 한사랑의원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">㈜KMW</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">서울국제스포츠레저산업전 참가</p>
+                    <p class="rnd-meta"><span class="rnd-org">SPOEX 2022</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">2023 신제품 세미나</p>
+                    <p class="rnd-meta"><span class="rnd-org">부산, 서울, 제주</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">잠수복 리페어 세미나</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">DEMA SHOW 데마쇼</p>
+                    <p class="rnd-meta"><span class="rnd-org">미국 뉴올리언스</span></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2022 ===== -->
+          <div class="history-decade" id="act2022">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2022</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">국제 의료기기, 병원설비 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES 2022</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">사각 룸타입 의료용 고압산소챔버 12인용 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">다대수병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소챔버 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">일산 명지병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용 의료용 고압산소치료기 교체 설치</p>
+                    <p class="rnd-meta"><span class="rnd-org">삼천포 서울병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소치료기 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">자연의원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">부산 국제 항노화 엑스포</p>
+                    <p class="rnd-meta"><span class="rnd-org">글로벌 헬스케어 위크</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">고압산소치료 연구센터 설립</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">고려병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">8인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">한빛병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">드림나라병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용 의료용 고압산소치료기 2SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">조은금강병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">6인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">케이미래의원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">부산 의료기기 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES BUSAN 2022</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">8인용 의료용 고압산소치료기 2SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">광주 굿모닝병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">8인용 의료용 고압산소치료기 1SET 납품, 1인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">제주 드림힐 요양병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">8인용 의료용 고압산소치료기 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">태흥당 한방병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">문무대왕 해양대상 해양산업상</p>
+                    <p class="rnd-meta"><span class="rnd-org">경상북도</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">대한민국 일자리 으뜸기업</p>
+                    <p class="rnd-meta"><span class="rnd-org">고용노동부</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">2022 국제소방안전박람회</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">대한민국방위산업전 2022</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">제1회 제주권 해양레저 콘텐츠 페스타</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">DEMA SHOW 데마쇼</p>
+                    <p class="rnd-meta"><span class="rnd-org">미국 올랜도</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">잠수복 리페어 세미나</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">풀페이스 마스크 세미나</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2021 ===== -->
+          <div class="history-decade" id="act2021">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2021</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소챔버 2SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">부산 온종합병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">양음압 선별진료소(호흡기전담클리닉) 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">영도병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">양음압 선별진료소(호흡기전담클리닉) 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">인천백병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">양음압 선별진료소(호흡기전담클리닉) 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">구미차병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">양음압 선별진료소(호흡기전담클리닉) 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">BS병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">국제 의료기기, 병원설비 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES 2021</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">사각 룸타입 의료용 고압산소챔버 12인용, 6인용 각 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">서호병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">스포츠 양음압챔버 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">대한 봅슬레이 스켈레톤 경기연맹</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">8인용 의료용 고압산소챔버 1SET 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">대구 푸른병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">부산 의료기기 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES BUSAN 2021</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">DEMA SHOW 데마쇼</p>
+                    <p class="rnd-meta"><span class="rnd-org">미국 라스베이거스</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">잠수복 리페어 세미나</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2020 ===== -->
+          <div class="history-decade" id="act2020">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2020</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">부산 Pre-챔프 우수기업 선정</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">신제품 세미나</p>
+                    <p class="rnd-meta"><span class="rnd-org">부산</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">ROV 레벨 1코스 교육</p>
+                    <p class="rnd-meta"><span class="rnd-org">충남해양과학고등학교</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">영남해상 컨테이너 형 SSDS 장비 납품</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용(10+2) 의료용 고압산소챔버 1SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">일산 명지병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용(10+2) 의료용 고압산소챔버 1SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">순천 성가롤로병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소챔버 2SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">센텀 사랑의병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소챔버 1SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">원광대학교병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용 의료용 고압산소챔버 1SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">DH 성형외과</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">4인용 의료용 고압산소챔버 1SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">당리 서호메디칼센터</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">고압산소치료챔버에 음압병실 기능이 결합된 일체형 고압산소챔버 개발</p>
+                    <p class="rnd-meta"><span class="rnd-org">산업통상자원부 연구지원사업</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">양음압 발효챔버 제품 개발</p>
+                    <p class="rnd-meta"><span class="rnd-org">중소벤처기업부 연구지원사업</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">실시간 생체모니터링이 가능한 스마트 양음압 이송장치 개발</p>
+                    <p class="rnd-meta"><span class="rnd-org">범부처</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">양음압 선별진료소(호흡기전담클리닉) 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">부산 남구보건소</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">양음압 선별진료소(호흡기전담클리닉) 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">옥천군 보건소</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">부산 의료기기 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES BUSAN 2020</span></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2019 ===== -->
+          <div class="history-decade" id="act2019">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2019</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">서울국제스포츠레저산업전 참가</p>
+                    <p class="rnd-meta"><span class="rnd-org">SPOEX 2019</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">KIMES 국제의료기기&amp;병원설비전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">서울 코엑스</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">ADEX 전시회 참가</p>
+                    <p class="rnd-meta"><span class="rnd-org">싱가포르</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">포세이돈 디스트리뷰터 미팅</p>
+                    <p class="rnd-meta"><span class="rnd-org">홍콩</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">신제품 세미나</p>
+                    <p class="rnd-meta"><span class="rnd-org">제주, 서울, 부산</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">GULL 신제품 미팅</p>
+                    <p class="rnd-meta"><span class="rnd-org">일본 도쿄</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">대한민국 해양안전 엑스포</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">아이봇 1인용 고압산소챔버 연구용 1SET</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용 의료용 고압산소챔버 1SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">부산 서호병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">1인용 의료용 고압산소챔버 2SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">서호요양병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">고압산소챔버(감압챔버) 1SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">㈜영남해상</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">VR 기반 산업잠수 교육 및 훈련 시스템 개발</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">2019 바이오항노화산업 미래혁신포럼 [고압산소치료와 항노화]에 대한 주제발표</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">부산 의료기기 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES BUSAN</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">동계용 신제품 세미나</p>
+                    <p class="rnd-meta"><span class="rnd-org">서울, 부산</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">DEMA SHOW 데마쇼</p>
+                    <p class="rnd-meta"><span class="rnd-org">미국 올랜도</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">2019 BUSAN IT EXPO (VR)</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">12인용 의료용 고압산소챔버 1SET, 1인용 의료용 고압산소챔버 1SET</p>
+                    <p class="rnd-meta"><span class="rnd-org">원광대학교병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">국민체육진흥공단 한국스포츠정책과학원 다중압력 일체형 챔버 납품</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">대한 봅슬레이 스켈레톤 경기연맹 다중압력 일체형 챔버 계약</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">2020년 전략산업 선도기업 선정</p>
+                    <p class="rnd-meta"><span class="rnd-org">라이프케어산업 분야</span></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2018 ===== -->
+          <div class="history-decade" id="act2018">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2018</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">서울국제스포츠레저산업전 참가</p>
+                    <p class="rnd-meta"><span class="rnd-org">SPOEX 2018</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료용 챔버 A/S</p>
+                    <p class="rnd-meta"><span class="rnd-org">삼천포서울병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">표면 공기 공급 잠수 시스템 A/S</p>
+                    <p class="rnd-meta"><span class="rnd-org">국민안전처 중앙해양특수구조단</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">ROV(Remotely Operated Vehicle) 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">미래해양기술</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료용 챔버 A/S</p>
+                    <p class="rnd-meta"><span class="rnd-org">신세계로병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">고압 콤프레셔 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">강원엔지니어링</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">국제병원 및 의료기기 산업 박람회</p>
+                    <p class="rnd-meta"><span class="rnd-org">K-Hospital fair 2018</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">움비리컬 및 수중 라이트/카메라 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">해양기술ENG</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">방글라데시 현장 산업잠수장비 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">현대건설</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">말레이시아 수출컨소시엄</p>
+                    <p class="rnd-meta"><span class="rnd-org">지역특화 수출컨소시엄</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">공기공급 시스템 A/S</p>
+                    <p class="rnd-meta"><span class="rnd-org">신세계로병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">부산 의료기기 전시회</p>
+                    <p class="rnd-meta"><span class="rnd-org">KIMES BUSAN</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">DEMA SHOW 데마쇼</p>
+                    <p class="rnd-meta"><span class="rnd-org">미국 라스베가스</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">다중압력 일체형 챔버 세계최초 개발 (고압산소챔버, 음압챔버)</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">스쿠버다이빙 다인용 교육을 위한 상호작용형 가상현실 (Virtual Reality) 시뮬레이션 개발</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2017 ===== -->
+          <div class="history-decade" id="act2017">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2017</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">잠수지원정 고압산소챔버(감압챔버) 2SET 공급</p>
+                    <p class="rnd-meta"><span class="rnd-org">해양 경찰</span></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2016 ===== -->
+          <div class="history-decade" id="act2016">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2016</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">중앙특수구조단 고압산소챔버(감압챔버)</p>
+                    <p class="rnd-meta"><span class="rnd-org">해양 경찰</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">SSDS(표면공기공급 잠수 시스템)공급</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2015 ===== -->
+          <div class="history-decade" id="act2015">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2015</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">울진해양레포츠센터 감압챔버 수리</p>
+                    <p class="rnd-meta"><span class="rnd-org">경상북도 울진군</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료용 고압산소챔버(12인용)</p>
+                    <p class="rnd-meta"><span class="rnd-org">해군의료원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료용 고압산소챔버(8+4인용)</p>
+                    <p class="rnd-meta"><span class="rnd-org">홍성 의료원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">한진중공업 ATS O2/MIXED HE GAS PIPE SYSTEM 수주</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">표면공기공급 잠수시스템 및 고압산소챔버내장형 제작</p>
+                    <p class="rnd-meta"><span class="rnd-org">㈜태평양 해양산업</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료용 고압산소챔버(8+4인용)</p>
+                    <p class="rnd-meta"><span class="rnd-org">통영 세계로병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">독일 POSEIDON (포세이돈) 독점계약</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2014 ===== -->
+          <div class="history-decade" id="act2014">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2014</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">다이빙 시스템 컨설팅 및 주요부품 제작 및 납품</p>
+                    <p class="rnd-meta"><span class="rnd-org">푸른중공업</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">고압산소챔버(8인용)</p>
+                    <p class="rnd-meta"><span class="rnd-org">세월호 현장(백스마린)</span></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== 2013 ===== -->
+          <div class="history-decade" id="act2013">
+            <div class="history-year-item" data-reveal>
+              <h4 class="history-year">2013</h4>
+              <ul class="history-month-box">
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료용 고압산소챔버(12인용)</p>
+                    <p class="rnd-meta"><span class="rnd-org">삼천포 서울 병원</span></p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료기기 제조 및 품질관리 기준 적합인정서 획득</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료기기 제조 허가증 획득</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="history-desc">
+                    <p class="rnd-title">의료용 잠수병 치료시설(챔버)</p>
+                    <p class="rnd-meta"><span class="rnd-org">삼천포 서울 병원</span></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER : include/footer.html -->
+  <div data-include="../include/footer.html"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sub.js"></script>
+</body>
+</html>

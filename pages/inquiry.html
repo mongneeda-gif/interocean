@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <title>사업문의 | 인터오션</title>
+  <meta name="description" content="인터오션 사업·제품, 기술지원·교육 문의를 남겨 주세요.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body data-gnb="inquiry">
+  <a href="#content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 상단 배경 영상 (자동재생은 muted 필수 / playsinline : iOS 전체화면 방지) -->
+  <div class="page-bg-video" aria-hidden="true">
+    <video src="../images/sub/ocean02.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- HEADER : include/header.html -->
+  <div data-include="../include/header.html"></div>
+
+  <main id="content" class="sub">
+
+    <!-- ===================== SUB TOP (타이틀만, 탭 없음) ===================== -->
+    <div class="sub-top">
+      <div class="sub-head">
+        <p class="sub-cate">사업문의</p>
+        <h2 class="sub-title">BUSINESS INQUIRY</h2>
+      </div>
+    </div>
+
+    <div class="sub-content inquiry inner">
+
+      <!-- ===================== 사업문의 =====================
+        - 왼쪽 : 스크롤 시 고정(sticky) - 타이틀 + 연락처
+        - 오른쪽 : 문의 폼 (* 필수 항목은 required)
+         -->
+      <section class="inq-wrap">
+        <div class="inq-side">
+          <div class="inq-side-inner" data-reveal>
+            <h3 class="inq-title">CONTACT US</h3>
+            <p class="inq-slogan">인터오션과 함께할 현장을 기다립니다.</p>
+            <dl class="inq-info">
+              <div><dt>ADDRESS</dt><dd>부산광역시 남구 신선로 231 (48553)</dd></div>
+              <div><dt>E-MAIL</dt><dd><a href="mailto:sales@interocean.co.kr">sales@interocean.co.kr</a></dd></div>
+              <div><dt>TEL</dt><dd><a href="tel:1660-0528">1660-0528</a></dd></div>
+              <div><dt>FAX</dt><dd>051-625-1735</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <form class="inq-form" action="#" method="post" enctype="multipart/form-data" novalidate data-reveal>
+          <!-- 구분 -->
+          <fieldset class="inq-field">
+            <legend class="inq-label">구분<span class="req" aria-label="필수">*</span></legend>
+            <div class="inq-types">
+              <label><input type="radio" name="type" value="business" checked><span>사업·제품 문의</span></label>
+              <label><input type="radio" name="type" value="support"><span>기술지원·교육</span></label>
+              <label><input type="radio" name="type" value="etc"><span>기타 문의</span></label>
+            </div>
+          </fieldset>
+
+          <div class="inq-row">
+            <div class="inq-field">
+              <label class="inq-label" for="inqCompany">기업(기관)명<span class="req" aria-label="필수">*</span></label>
+              <input type="text" id="inqCompany" name="company" class="inq-input" required>
+            </div>
+            <div class="inq-field">
+              <label class="inq-label" for="inqName">담당자 이름(직급)<span class="req" aria-label="필수">*</span></label>
+              <input type="text" id="inqName" name="name" class="inq-input" placeholder="예) 홍길동 (팀장)" required>
+            </div>
+          </div>
+
+          <div class="inq-row">
+            <div class="inq-field">
+              <label class="inq-label" for="inqTel">연락처<span class="req" aria-label="필수">*</span></label>
+              <input type="tel" id="inqTel" name="tel" class="inq-input" placeholder="예) 010-0000-0000" required>
+            </div>
+            <div class="inq-field">
+              <label class="inq-label" for="inqEmail">이메일<span class="req" aria-label="필수">*</span></label>
+              <input type="email" id="inqEmail" name="email" class="inq-input" placeholder="example@company.com" required>
+            </div>
+          </div>
+
+          <div class="inq-field">
+            <label class="inq-label" for="inqField">관심 분야</label>
+            <select id="inqField" name="field" class="inq-input inq-select">
+              <option value="">선택</option>
+              <option>장비 운용교육</option>
+              <option>스쿠버·프리다이빙</option>
+              <option>국방·공공안전</option>
+              <option>산업잠수</option>
+              <option>수중촬영·탐사</option>
+              <option>고압산소챔버</option>
+              <option>기타</option>
+            </select>
+          </div>
+
+          <div class="inq-field">
+            <label class="inq-label" for="inqSubject">제목<span class="req" aria-label="필수">*</span></label>
+            <input type="text" id="inqSubject" name="subject" class="inq-input" required>
+          </div>
+
+          <div class="inq-field">
+            <label class="inq-label" for="inqContent">문의 내용<span class="req" aria-label="필수">*</span></label>
+            <textarea id="inqContent" name="content" class="inq-input inq-textarea" placeholder="장비명, 수량, 사용 현장, 일정 등을 적어 주시면 더 정확히 안내해 드립니다." required></textarea>
+          </div>
+
+          <div class="inq-field">
+            <span class="inq-label">첨부파일</span>
+            <label class="inq-file">
+              <input type="file" name="file">
+              <span class="inq-file-name">선택된 파일 없음</span>
+              <span class="inq-file-btn">파일 선택</span>
+            </label>
+            <p class="inq-help">도면, 사양서, 현장 사진 등 (최대 10MB)</p>
+          </div>
+
+          <!-- 개인정보 수집·이용 동의 -->
+          <div class="inq-field">
+            <span class="inq-label">개인정보 수집·이용 동의<span class="req" aria-label="필수">*</span></span>
+            <div class="inq-terms" tabindex="0">
+              <p>[임시] ㈜인터오션은 문의 접수 및 답변을 위해 아래와 같이 개인정보를 수집·이용합니다.</p>
+              <p>1. 수집 항목 : 기업(기관)명, 담당자 이름·직급, 연락처, 이메일</p>
+              <p>2. 수집 목적 : 문의 내용 확인 및 답변, 상담 진행</p>
+              <p>3. 보유 기간 : 문의 처리 완료 후 [임시] 년 (관계 법령에 따라 보존이 필요한 경우 해당 기간)</p>
+              <p>※ 동의를 거부할 수 있으며, 거부 시 문의 접수가 제한됩니다. 실제 문구는 개인정보처리방침에 맞춰 확정해 주세요.</p>
+            </div>
+            <label class="inq-agree">
+              <input type="checkbox" name="agree" required>
+              <span>개인정보 수집·이용에 동의합니다.</span>
+            </label>
+          </div>
+
+          <div class="inq-btns">
+            <button type="reset" class="inq-btn inq-btn-cancel"><span>취소</span></button>
+            <button type="submit" class="inq-btn inq-btn-submit"><span>문의하기</span></button>
+          </div>
+          <p class="inq-msg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER : include/footer.html -->
+  <div data-include="../include/footer.html"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sub.js"></script>
+</body>
+</html>

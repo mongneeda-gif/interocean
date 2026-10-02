@@ -1,0 +1,416 @@
+@charset "UTF-8";
+
+/* ==================================================
+   Common - section head / reveal
+================================================== */
+.gnb .depth2 {
+  background: rgba(1, 18, 46, 0.92);
+}
+#content{
+  background: url(../images/main/main_bg.png) no-repeat center top;
+  background-size: cover;
+  min-height: 6000px;
+}
+.sc-head { text-align: center; }
+.sc-title {
+  font-size: 40px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.3;
+}
+.sc-title strong { font-weight: 700; }
+.sc-desc {
+  margin-top: 14px; font-family: var(--ff-noto); font-size: 18px; color: rgba(255, 255, 255, 1); font-weight: 600;
+}
+.sc-label {
+  font-family: var(--ff-en); font-size: 14px; font-weight: 700;
+  color: var(--c-primary); letter-spacing: .02em;
+}
+
+/* ==================================================
+   VISUAL (hero + intro)
+================================================== */
+.sc-visual {
+  position: relative; overflow: hidden;
+  padding-bottom: 200px;
+}
+.visual-bg {
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    url("../images/main/visual_bg.jpg") no-repeat center top / cover,
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(90, 150, 255, .55), transparent 70%),
+    linear-gradient(180deg, #0d3aa6 0%, #0a2a86 25%, #071d63 55%, #061544 80%, #041139 100%);
+}
+
+/* hero */
+.hero {
+  display: flex; align-items: center; justify-content: center;
+  height: clamp(640px, 100vh, 1000px); padding: calc(var(--header-h) + 60px) var(--gutter) 80px;
+
+}
+.hero-title {
+  font-family: var(--ff-en); font-weight: 800; text-align: center;
+  font-size: clamp(48px, 7.4vw, 142px); line-height: 1.18; letter-spacing: -0.02em;
+}
+/* .line : 스크롤하면 줄마다 좌우로 밀려남 (main.js 가 translate 속성 조절 / 1·3줄 왼쪽, 2줄 오른쪽) */
+.hero-title .line { display: block; overflow: hidden; padding: 0 .05em; will-change: translate; }
+.hero-title .line > span { display: inline-flex; align-items: center; }
+
+/* 글자 단위 순차 등장 + 흐림 → 선명
+   main.js 가 글자마다 .char + --i(순번) 부여 → 순번만큼 늦게 올라오며 초점이 맞음 */
+.hero-title .char {
+  display: inline-block; white-space: pre;
+  transform: translateY(110%); opacity: 0; filter: blur(5px);
+  transition:
+    transform 1s var(--ease) calc(var(--i) * .045s),
+    opacity .7s calc(var(--i) * .045s),
+    filter 1.1s var(--ease) calc(var(--i) * .045s);
+}
+.is-loaded .hero-title .char { transform: none; opacity: 1; filter: blur(0); }
+
+.hero-title .globe {
+  display: inline-block; flex-shrink: 0;
+  width: .78em; height: .78em; margin: 0 .02em;
+  border-radius: 50%; overflow: hidden;
+  background: radial-gradient(circle at 35% 30%, #cfe3ff 0%, #5d8fd6 35%, #1b3f86 70%, #0b1f4d 100%);
+  box-shadow: 0 0 .25em rgba(120, 180, 255, .45);
+  animation: globeSpin 30s linear infinite;
+  /* 지구본은 모든 글자 뒤 마지막에 흐림 → 선명 + 톡 튀어나옴 (scale 속성 사용 → 회전 transform 과 충돌 없음) */
+  scale: 0; filter: blur(14px);
+  transition:
+    scale .9s cubic-bezier(.34, 1.56, .64, 1) calc(var(--i, 0) * .045s + .15s),
+    filter 1s var(--ease) calc(var(--i, 0) * .045s + .15s);
+}
+.is-loaded .hero-title .globe { scale: 1; filter: blur(0); }
+.hero-title .globe img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes globeSpin { to { transform: rotate(360deg); } }
+
+/* intro */
+.intro {
+  position: relative;
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 1200px; padding-top: 100px;
+}
+.intro-title {
+  font-size: clamp(32px, 3vw, 54px); font-weight: 300; line-height: 1.45; letter-spacing: -0.03em;
+}
+.intro-title strong { font-size: 1.2em; font-weight: 700; }
+
+.intro-line {
+  position: absolute; left: 50%; top: 0;
+  width: 1px; height: 100%;
+  background: rgba(255, 255, 255, .4);
+  /* --line-progress(0~1) : main.js 에서 스크롤 위치에 따라 갱신 */
+  transform: scaleY(var(--line-progress, 0)); transform-origin: top;
+  will-change: transform;
+}
+
+/* 세로 위치는 main.js 가 translate 로 제어 (라인을 따라 내려옴) / transform 은 둥실 애니메이션 */
+.intro-diver {
+  position: absolute; top: 0; left: calc(50% - 250px);
+  width: 300px; height: auto;
+  opacity: 0;
+  will-change: translate;
+  animation: diverFloat 6s ease-in-out infinite;
+}
+@keyframes diverFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  50% { transform: translate(10px, -20px) rotate(-2deg); }
+}
+
+.intro-right {
+  padding-left: clamp(40px, 7vw, 130px); padding-top: 240px;
+  font-size: 18px; line-height: 1.7; color: rgba(255, 255, 255, .85);
+}
+.intro-right p + p { margin-top: 70px; }
+
+/* ==================================================
+   BUSINESS
+================================================== */
+.sc-business {
+  padding: 60px 0 120px;
+  overflow-x: clip; /* 양옆으로 보이는 슬라이드가 페이지 가로폭을 늘리지 않도록 */
+  /* background: linear-gradient(180deg, #041139 0%, #041139 55%, #0b3f95 100%); */
+}
+.business-slider { margin-top: 60px; overflow: visible; }
+.business-slider .swiper-slide { width: 490px; }
+
+.biz-card {
+  position: relative; display: flex; flex-direction: column; justify-content: space-between;
+  height: 665px; padding: 60px 30px 44px;
+  border-radius: 14px; overflow: hidden; text-align: center;
+  background: linear-gradient(180deg, #1e4f9c, #0b1f4d);
+}
+.biz-card::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,0) 60%, rgba(0,0,0,.6) 100%);
+}
+.biz-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1s var(--ease);
+}
+.biz-card:hover .biz-bg { transform: scale(1.06); }
+.biz-top, .biz-txt { position: relative; z-index: 2; }
+
+.biz-cate {
+  display: block; font-family: var(--ff-en); font-size: 20px; font-weight: 700; letter-spacing: .01em;
+}
+.biz-cate em { font-size: .8em; margin-right: 4px; }
+.biz-name { display: block; margin-top: 10px; font-size: 38px; font-weight: 700; letter-spacing: -0.03em; }
+.biz-txt { font-size: 16px; font-weight: 600; line-height: 1.55; }
+
+/* ==================================================
+   BRAND
+================================================== */
+.sc-brand {
+  position: relative; overflow: hidden;
+  padding: 150px var(--gutter) 260px;
+  /* background:
+    url("../images/main/brand_bg.jpg") no-repeat center / cover,
+    linear-gradient(180deg, #0b3f95 0%, #1a5fbf 18%, #144ea8 45%, #0a2d73 75%, #051640 100%); */
+}
+.sc-brand .sc-desc { color: rgba(255, 255, 255, 1);  
+  filter: drop-shadow(0 2px 1px rgba(2, 16, 50, .35)) drop-shadow(0 2px 2px rgba(2, 16, 50, .2));}
+
+.brand-list {
+  position: relative;
+  max-width: 1365px; margin: 60px auto 0;
+  aspect-ratio: 1365 / 440;
+}
+.brand-list li {
+  position: absolute;
+  animation: brandFloat 5s ease-in-out infinite;
+}
+.brand-list img {
+  width: 100%; height: auto;
+  /* 투명 PNG 모양을 따라 그림자 (box-shadow 는 사각형으로 나옴) */
+  filter: drop-shadow(0 3px 5px rgba(2, 16, 50, .40)) drop-shadow(0 2px 3px rgba(2, 16, 50, .2));
+}
+
+.brand-list .b-oceanreef   { left: 12.5%; top: 22%; width: 12%; animation-delay: -.5s; }
+.brand-list .b-cressi      { left: 29.5%; top: 12%; width: 18%; animation-delay: -1.2s; }
+.brand-list .b-tovatec     { left: 65%;   top: 6%;  width: 13%; animation-delay: -2s; }
+.brand-list .b-streamtrail { left: 1%;    top: 44%; width: 31%; animation-delay: -3s; }
+.brand-list .b-gull        { left: 35%;   top: 25%; width: 35%; animation-delay: 0s; animation-duration: 6s; }
+.brand-list .b-poseidon    { left: 70%;   top: 32%; width: 18%; animation-delay: -1.8s; }
+.brand-list .b-mernova     { left: 88%;   top: 45%; width: 11%; animation-delay: -2.6s; }
+.brand-list .b-xtar        { left: 30%;   top: 67%; width: 7%;  animation-delay: -3.4s; }
+.brand-list .b-ist         { left: 77%;   top: 58%; width: 7%;  animation-delay: -.9s; }
+.brand-list .b-chasing     { left: 45%;   top: 82%; width: 15%; animation-delay: -4s; }
+
+@keyframes brandFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ==================================================
+   PROCESS
+================================================== */
+.sc-process {
+  padding: 60px 0 200px;
+  /* background: linear-gradient(180deg, #051640 0%, #020818 45%, #000 100%); */
+}
+.sc-process .inner {
+  display: grid; grid-template-columns: 750px 1fr; align-items: center;
+  gap: clamp(40px, 8vw, 145px);
+}
+
+.process-cycle {
+  --orbit: 28.28%; /* 큰 원 반지름 = 중앙→작은 원 중심 거리 √(20² + 20²) */
+  position: relative; aspect-ratio: 1;
+  background: #0b1a3e; border-radius: 40px;
+}
+/* 큰 원 : 4개 원의 중심과 화살표가 이 선 위에 위치 */
+.process-cycle::before {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: calc(var(--orbit) * 2); aspect-ratio: 1;
+  /* 점선 간격 조절 : stroke-dasharray='선길이 간격' (px) */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Ccircle cx='50%25' cy='50%25' r='49.8%25' fill='none' stroke='%23fff' stroke-width='1.5' stroke-dasharray='4.5 9'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  opacity: .5;
+  transform: translate(-50%, -50%);
+}
+.cycle-list li {
+  position: absolute; width: 24%; aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+}
+.cycle-list .pos-tl { left: 30%; top: 30%; }
+.cycle-list .pos-tr { left: 70%; top: 30%; }
+.cycle-list .pos-br { left: 70%; top: 70%; }
+.cycle-list .pos-bl { left: 30%; top: 70%; }
+
+.cycle-item {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: #243559; border: 1px solid rgba(255, 255, 255, .12);
+  font-size: 21px; font-weight: 600; line-height: 1.35; text-align: center;
+  transition: background-color .5s, box-shadow .5s, transform .5s var(--ease);
+}
+.cycle-item svg { width: 28px; height: 28px; }
+.cycle-item:hover { transform: scale(1.04); }
+.cycle-item.is-active {
+  background: var(--c-primary); border-color: transparent;
+  box-shadow: 0 0 60px rgba(47, 107, 255, .55);
+}
+
+.process-cycle .arrow {
+  position: absolute; width: 10px; height: 10px;
+  border-top: 3px solid rgba(255, 255, 255, .55);
+  border-right: 3px solid rgba(255, 255, 255, .55);
+}
+.process-cycle .arrow-t { left: 50%; top: calc(50% - var(--orbit)); transform: translate(-50%, -50%) rotate(45deg); }
+.process-cycle .arrow-r { left: calc(50% + var(--orbit)); top: 50%; transform: translate(-50%, -50%) rotate(135deg); }
+.process-cycle .arrow-b { left: 50%; top: calc(50% + var(--orbit)); transform: translate(-50%, -50%) rotate(-135deg); }
+.process-cycle .arrow-l { left: calc(50% - var(--orbit)); top: 50%; transform: translate(-50%, -50%) rotate(-45deg); }
+
+.process-title {
+  margin-top: 24px;
+  font-size: clamp(32px, 3vw, 54px); font-weight: 700; line-height: 1.35; letter-spacing: -0.03em;
+}
+.process-detail { margin-top: 50px; max-width: 580px; }
+.detail-title { display: block; font-size: 20px; font-weight: 700; }
+.detail-desc { margin-top: 20px; font-family: var(--ff-noto); font-size: 17px; line-height: 1.7; color: rgba(255, 255, 255, .7); }
+.process-detail.is-change .detail-title,
+.process-detail.is-change .detail-desc { animation: detailIn .7s var(--ease); }
+@keyframes detailIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ==================================================
+   PARTNER (logo marquee)
+================================================== */
+.sc-partner {
+  display: flex; flex-direction: column; gap: 16px;
+  padding: 20px 0 160px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+}
+.partner-row { overflow: hidden; }
+.partner-track {
+  display: flex; gap: 16px; width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.partner-row[data-dir="right"] .partner-track { animation-direction: reverse; }
+.partner-row:hover .partner-track { animation-play-state: paused; }
+.partner-track li {
+  display: flex; align-items: center; justify-content: center;
+  width: 210px; height: 210px; flex-shrink: 0;
+  background: #161616; border-radius: 10px;
+}
+/* 로고 흰색 처리 : brightness(0) 으로 모든 색을 검정으로 → invert(1) 로 흰색 반전 (png·svg 공통)
+   ※ 배경이 투명한 로고만 가능 (배경이 채워진 로고는 흰 사각형이 됨) */
+.partner-track img {
+  max-width: 60%; max-height: 40%; object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+/* JS에서 track 내용을 1회 복제 → -50% 이동 시 이음매 없음 (gap 보정 포함) */
+@keyframes marquee {
+  to { transform: translateX(calc(-50% - 8px)); }
+}
+
+/* ==================================================
+   LOCATION
+================================================== */
+.sc-location {
+  background: #1c1c1c; margin-top: 100px;
+}
+.sc-location .inner {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 385px;
+}
+.location-title { font-family: var(--ff-en); font-size: 48px; font-weight: 700; }
+.location-desc { margin-top: 14px; font-family: var(--ff-noto); font-size: 17px; line-height: 1.7; color: rgba(255, 255, 255, .8); }
+.location-desc strong { display: block; font-size: 20px; font-weight: 500; color: var(--c-white); }
+
+.btn-line {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 30px; height: 40px; padding: 0 22px;
+  border: 1px solid rgba(255, 255, 255, .6); border-radius: 999px;
+  font-size: 14px; transition: background-color .3s, color .3s;
+}
+.btn-line svg { width: 14px; height: 14px; }
+.btn-line:hover { background: var(--c-white); color: #1c1c1c; }
+
+.location-img { width: 570px; margin: -100px 0 -30px; }
+
+/* ==================================================
+   CONTACT
+================================================== */
+.sc-contact {
+  display: flex; justify-content: center;
+  padding: 180px var(--gutter) 160px;
+}
+.btn-contact {
+  display: flex; align-items: center; justify-content: center;
+  width: 500px; max-width: 100%; height: 90px;
+  background: var(--c-primary); border-radius: 8px;
+  font-family: var(--ff-en); font-size: 20px; font-weight: 700; letter-spacing: .02em;
+  transition: background-color .3s, transform .4s var(--ease);
+}
+.btn-contact:hover { background: #1f55e0; transform: translateY(-4px); }
+
+/* ==================================================
+   Responsive
+================================================== */
+@media (max-width: 1440px) {
+  .sc-process .inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 1024px) {
+  .intro { min-height: auto; padding-bottom: 120px; }
+  .intro-right { padding-top: 160px; font-size: 16px; }
+  .intro-diver { width: 220px; left: calc(50% - 220px); }
+
+  .business-slider .swiper-slide { width: 360px; }
+  .biz-card { height: 500px; }
+  .biz-name { font-size: 30px; }
+
+  .sc-process .inner { grid-template-columns: 1fr; }
+  .process-cycle { max-width: 600px; width: 100%; margin: 0 auto; }
+
+  .partner-track li { width: 160px; height: 160px; }
+
+  .sc-location .inner { flex-direction: column; align-items: flex-start; padding-top: 60px; padding-bottom: 60px; }
+  .location-img { width: 100%; max-width: 480px; margin: 40px auto 0; }
+}
+
+@media (max-width: 768px) {
+  .sc-title { font-size: 28px; }
+  .sc-desc { padding: 0 var(--gutter); }
+
+  .hero { height: auto; min-height: 80vh; }
+
+  .intro { grid-template-columns: 1fr; padding-top: 40px; }
+  .intro-line, .intro-diver { display: none; }
+  .intro-right { padding: 60px 0 0; }
+  .intro-right br { display: none; }
+  .intro-right p + p { margin-top: 30px; }
+  .sc-visual { padding-bottom: 60px; }
+
+  .business-slider .swiper-slide { width: 280px; }
+  .biz-card { height: 400px; padding: 40px 20px 30px; }
+  .biz-cate { font-size: 15px; }
+  .biz-name { font-size: 24px; }
+  .biz-txt { font-size: 13px; }
+
+  .sc-brand { padding: 100px var(--gutter) 140px; }
+
+  .process-cycle { border-radius: 24px; }
+  .cycle-list li { width: 30%; }
+  .cycle-item { font-size: 12px; gap: 6px; }
+  .cycle-item svg { width: 20px; height: 20px; }
+  .process-detail { margin-top: 30px; }
+
+  .sc-partner { gap: 10px; padding-bottom: 80px; }
+  .partner-track { gap: 10px; }
+  .partner-track li { width: 110px; height: 110px; }
+  @keyframes marquee { to { transform: translateX(calc(-50% - 5px)); } }
+
+  .location-title { font-size: 34px; }
+  .sc-contact { padding: 100px var(--gutter); }
+  .btn-contact { height: 70px; font-size: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  [data-reveal], .hero-title .char { opacity: 1; transform: none; filter: none; }
+  .hero-title .globe { scale: 1; filter: none; }
+}

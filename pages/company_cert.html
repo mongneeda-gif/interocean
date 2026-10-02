@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <title>인증사항 | 기업소개 | 인터오션</title>
+  <meta name="description" content="㈜인터오션의 인증, 특허, 디자인등록 및 수상 내역입니다.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body data-gnb="company" data-sub="cert">
+  <a href="#content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 상단 배경 영상 (자동재생은 muted 필수 / playsinline : iOS 전체화면 방지) -->
+  <div class="page-bg-video" aria-hidden="true">
+    <video src="../images/sub/ocean02.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- HEADER : include/header.html -->
+  <div data-include="../include/header.html"></div>
+
+  <main id="content" class="sub">
+
+    <!-- ===================== SUB TOP (타이틀 + 탭) ===================== -->
+    <div class="sub-top">
+      <div class="sub-head">
+        <p class="sub-cate">인증사항</p>
+        <h2 class="sub-title">Certification details</h2>
+      </div>
+
+      <nav class="lnb" aria-label="기업소개 하위 메뉴">
+        <ul>
+          <li><a href="company_about.html">인터오션 소개</a></li>
+          <li><a href="company_ci.html">CI</a></li>
+          <li><a href="company_cert.html" aria-current="page">인증사항</a></li>
+          <li><a href="company_activity.html">활동성과</a></li>
+          <li><a href="company_rnd.html">R&amp;D 연구성과</a></li>
+          <li><a href="company_location.html">찾아오시는 길</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sub-content cert inner">
+
+      <!-- ===================== 인증 · 특허 · 디자인등록 · 수상 =====================
+        - 분류 탭 : data-filter 값과 같은 data-cate 항목만 표시 (sub.js)
+        - 카드 클릭 : 크게 보기 팝업 (data-full 이미지 / 좌우 이동 · ESC 닫기) -->
+      <section class="cert-sec">
+       
+        <div class="cert-filter" role="tablist" aria-label="인증사항 분류" data-reveal>
+          <button type="button" role="tab" class="is-active" aria-selected="true" data-filter="all">전체 <em>83</em></button>
+          <button type="button" role="tab" aria-selected="false" data-filter="cert">인증 <em>27</em></button>
+          <button type="button" role="tab" aria-selected="false" data-filter="patent">특허 <em>36</em></button>
+          <button type="button" role="tab" aria-selected="false" data-filter="design">디자인등록 <em>11</em></button>
+          <button type="button" role="tab" aria-selected="false" data-filter="award">수상 <em>9</em></button>
+        </div>
+
+        <ul class="cert-list">
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/tot.png">
+              <span class="cert-img"><img src="../images/sub/cert/tot.png" alt="호흡 최적화 구현을 위한 가변환경 제어 밸브 탑재 고압산소챔버" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">신기술 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_67.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_67.jpg" alt="글로벌 헬스케어 위크(고령친화바이오산업 유공 포상)" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">고령친화바이오산업 유공 포상</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_1.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_1.jpg" alt="2022 대한민국 일자리 으뜸기업" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">2022 대한민국 일자리 으뜸기업</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_2.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_2.jpg" alt="모범납세자 표창장" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">모범납세자 표창장</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_3.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_3.jpg" alt="문무대왕 해양대상 해양산업상" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">문무대왕 해양대상 해양산업상</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_4.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_4.jpg" alt="대한고압의학회장 감사패" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">대한고압의학회장 감사패</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_5.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_5.jpg" alt="보건복지부 장관 표창장" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">보건복지부 장관 표창장</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_6.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_6.jpg" alt="일자리창출 유공 표창" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">일자리창출 유공 표창</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_64.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_64.jpg" alt="스포츠산업 선도기업 인증패" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">스포츠산업 선도기업 인증패</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_8.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_8.jpg" alt="대한민국 일자리 으뜸기업 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">대한민국 일자리 으뜸기업 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_10.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_10.jpg" alt="선도기업 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">선도기업 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_72.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_72.jpg" alt="예비 오션스타기업 선정 증서 상패" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">예비 오션스타기업 선정 증서 상패</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_73.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_73.jpg" alt="예비 오션스타기업 선정 증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">예비 오션스타기업 선정 증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_74.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_74.jpg" alt="한국소비자평가 1위" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">2024 한국소비자평가 1위</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_11.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_11.jpg" alt="우수체육용구 생산업체 지정서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">우수체육용구 생산업체 지정서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_12.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_12.jpg" alt="부산광역시 우수기업인 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">부산광역시 우수기업인 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="award">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_75.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_75.jpg" alt="해양경찰청장 감사장" loading="lazy"></span>
+              <span class="cert-badge is-award">수상</span>
+              <span class="cert-title">해양경찰청장 감사장</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_70.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_70.jpg" alt="ISO13485 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">ISO 13485</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_15.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_15.jpg" alt="ISO 9001" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">ISO 9001</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_12_1.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_12_1.jpg" alt="지식재산 경영인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">지식재산 경영인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_12_2.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_12_2.jpg" alt="벤처기업확인서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">벤처기업확인서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_13.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_13.jpg" alt="CE 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">CE 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_14.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_14.jpg" alt="IMCA 맴버사 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">IMCA 맴버사 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_16.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_16.jpg" alt="기업부설연구소 인정서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">기업부설연구소 인정서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_17.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_17.jpg" alt="GMP" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">GMP</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_18.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_18.jpg" alt="이노비즈 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">이노비즈 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_71.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_71.jpg" alt="지역특화 프로젝트 레전트 50+ 참여기업 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">지역특화 참여기업 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_19.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_19.jpg" alt="의료기기 제조업 허가증" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">의료기기 제조업 허가증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_20.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_20.jpg" alt="의료기기판매업신고증" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">의료기기 판매업 신고증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_69.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_69.jpg" alt="의료기기수리업신고증" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">의료기기 수리업 신고증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_21.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_21.jpg" alt="의료기기 제조 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">의료기기 제조 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_22.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_22.jpg" alt="비상감압챔버 KR인증" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">비상감압챔버 KR인증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_23.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_23.jpg" alt="자율안전확인 신고증명서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">자율안전확인 신고증명서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_24.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_24.jpg" alt="자율안전확인 신고증명서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">자율안전확인 신고증명서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_25.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_25.jpg" alt="TRCU(010) 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">TRCU(010) 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="cert">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_26.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_26.jpg" alt="TRCU(032) 인증서" loading="lazy"></span>
+              <span class="cert-badge is-cert">인증</span>
+              <span class="cert-title">TRCU(032) 인증서</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_66.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_66.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">음압병실 기능이 결합된 고압산소치료용 챔버</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_27.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_27.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">씰부재 탈부착이 가능한 잠수복</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_28.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_28.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">절첩식 커버를 구비한 이송장치</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_29.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_29.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">이동 및 보관이 용이한 플레시블형 챔버</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_30.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_30.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">외부전력 공급이 가능한 건식 잠수복</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_31.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_31.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">동물용 챔버</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_32.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_32.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">고압챔버환경 사용 가능한 환자감시장치</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_33.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_33.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">모듈형 조립식 챔버</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_34.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_34.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">이동식 음압격리병실</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_35.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_35.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">이동 가능한 접이식 양음압 시설</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_36.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_36.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">소독장치를 구비한 챔버 시스템</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_37.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_37.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">미닫이도어를 구비한 고압산소치료용 챔버 시스템</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_38.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_38.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">사용자 생체정보 모니터링이 가능한 다중압력챔버</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_39.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_39.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">도어 밀폐 및 안전 개폐가 가능한 양음압 챔버</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_40.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_40.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">복수개의 다중압력챔버 모니터링 시스템</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_41.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_41.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">밀폐력이 향상된 선별진료소</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_42.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_42.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">고압산소치료 자동화 시스템 및 그 방법</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_43.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_43.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">이동형 선별진료소</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_44.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_44.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">의료진 보호기능이 구비된 선별진료소</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_45.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_45.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">멀티 플레이스가 구비되는 양음압챔버</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_46.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_46.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">양-음압 제어 챔버 및 이를 포함하는 양-음압 제어 시스템</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_47.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_47.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">양-음압 제어 챔버 및 이를 포함하는 양-음압 제어 시스템</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_48.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_48.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">전염병 확산 방지를 위해 분리검진이 가능한 선별 진료소</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_49.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_49.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">다중압력 챔버용 립씰</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_50.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_50.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">안전장치가 구비된 퀵 클로징 도어 어셈블리</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_51.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_51.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">압력 챔버 시스템용 호기 배출 밸브</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_52.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_52.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">호흡 장치를 포함한 다중압력 일체형 챔버 시스템</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_53.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_53.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">다중압력 일체형 챔버 시스템</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_54.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_54.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">교체 가능한 모듈형 구성요소로 이루어진 휴대용 산소호흡기</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_68.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_68.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">특허증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_76.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_76.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">특허증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_77.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_77.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">특허증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_79.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_79.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">특허증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_80.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_80.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">특허증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_54.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_54.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">특허증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="patent">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_81.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_81.jpg" alt="특허증" loading="lazy"></span>
+              <span class="cert-badge is-patent">특허</span>
+              <span class="cert-title">특허증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_55.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_55.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_56.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_56.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_57.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_57.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_58.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_58.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_59.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_59.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_60.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_60.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_61.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_61.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_62.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_62.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_63.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_63.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_65.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_65.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+          <li class="cert-item" data-cate="design">
+            <button type="button" class="cert-card" data-full="../images/sub/cert/certification_78.jpg">
+              <span class="cert-img"><img src="../images/sub/cert/certification_78.jpg" alt="디자인등록증" loading="lazy"></span>
+              <span class="cert-badge is-design">디자인등록</span>
+              <span class="cert-title">디자인등록증</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 인증서 크게 보기 팝업 -->
+  <div class="cert-modal" role="dialog" aria-modal="true" aria-label="인증서 크게 보기" hidden>
+    <div class="cert-modal-inner">
+      <img src="" alt="" class="cert-modal-img">
+      <p class="cert-modal-title"></p>
+      <button type="button" class="cert-modal-prev" aria-label="이전 인증서"></button>
+      <button type="button" class="cert-modal-next" aria-label="다음 인증서"></button>
+      <button type="button" class="cert-modal-close" aria-label="닫기"></button>
+    </div>
+  </div>
+
+  <!-- FOOTER : include/footer.html -->
+  <div data-include="../include/footer.html"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sub.js"></script>
+</body>
+</html>

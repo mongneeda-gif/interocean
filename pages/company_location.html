@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <title>찾아오시는 길 | 기업소개 | 인터오션</title>
+  <meta name="description" content="인터오션 본사, 서울 지사·전시장, 고압산소치료 연구센터, 기업부설연구소, 공장 위치와 연락처입니다.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body data-gnb="company" data-sub="location">
+  <a href="#content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 상단 배경 영상 (자동재생은 muted 필수 / playsinline : iOS 전체화면 방지) -->
+  <div class="page-bg-video" aria-hidden="true">
+    <video src="../images/sub/ocean02.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- HEADER : include/header.html -->
+  <div data-include="../include/header.html"></div>
+
+  <main id="content" class="sub">
+
+    <!-- ===================== SUB TOP (타이틀 + 탭) ===================== -->
+    <div class="sub-top">
+      <div class="sub-head">
+        <p class="sub-cate">찾아오시는 길</p>
+        <h2 class="sub-title">LOCATION</h2>
+      </div>
+
+      <nav class="lnb" aria-label="기업소개 하위 메뉴">
+        <ul>
+          <li><a href="company_about.html">인터오션 소개</a></li>
+          <li><a href="company_ci.html">CI</a></li>
+          <li><a href="company_cert.html">인증사항</a></li>
+          <li><a href="company_activity.html">활동성과</a></li>
+          <li><a href="company_rnd.html">R&amp;D 연구성과</a></li>
+          <li><a href="company_location.html" aria-current="page">찾아오시는 길</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sub-content location inner">
+
+      <!-- ===================== 찾아오시는 길 =====================
+        - 지점 탭 클릭 → 아래 지도(iframe src = 탭의 data-map)와 정보 패널 교체 (sub.js)
+        - 지도 : 구글 지도 공식 퍼가기 코드의 src (구글 지도 > 공유 > 지도 퍼가기) / 지점 추가 시 탭 버튼 + loc-panel 한 쌍 추가 -->
+      <section class="loc-sec">
+        <div class="loc-tabs" role="tablist" aria-label="지점 선택" data-reveal>
+          <button type="button" role="tab" id="loc-tab-hq" aria-controls="loc-hq" aria-selected="true" class="is-active" data-map="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x3568ed9839d4c7e5%3A0x93d0ba6cd80a0994!2zKOyjvCnsnbjthLDsmKTshZgg7ZW07JaR7IKs7JeF67aA!5e0!3m2!1sko!2skr!4v1790906330959!5m2!1sko!2skr">본사 <em>01</em></button>
+          <button type="button" role="tab" id="loc-tab-seoul" aria-controls="loc-seoul" aria-selected="false" data-map="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357ca5e172568abd%3A0xb8e61532b97a3560!2z44ic7J247YSw7Jik7IWYIOyEnOyauOyngOyCrA!5e0!3m2!1sko!2skr!4v1790907624188!5m2!1sko!2skr">서울 지사 &amp; 전시장 <em>02</em></button>
+          <button type="button" role="tab" id="loc-tab-hbot" aria-controls="loc-hbot" aria-selected="false" data-map="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x3568edde869760d7%3A0xa2aba2b5487053a1!2z44ic7J247YSw7Jik7IWYIOqzoOyVleyCsOyGjOy5mOujjCDsl7DqtazshLzthLA!5e0!3m2!1sko!2skr!4v1790906526356!5m2!1sko!2skr">고압산소치료 연구센터 <em>03</em></button>
+          <button type="button" role="tab" id="loc-tab-lab" aria-controls="loc-lab" aria-selected="false" data-map="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x3568ed036fd93f91%3A0x8d402df3f5a4184d!2z44ic7J247YSw7Jik7IWYIO2XrOyKpOy8gOyWtOyCrOyXheu2gA!5e0!3m2!1sko!2skr!4v1790908094074!5m2!1sko!2skr">기업부설연구소 <em>04</em></button>
+          <button type="button" role="tab" id="loc-tab-plant" aria-controls="loc-plant" aria-selected="false" data-map="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x3568ec141bd9e113%3A0xb658b871e2324f69!2z67aA7IKw6rSR7Jet7IucIOuCqOq1rCDsi6DshKDroZwgMjE3LTEx!5e0!3m2!1sko!2skr!4v1790906579745!5m2!1sko!2skr">공장 <em>05</em></button>
+        </div>
+
+        <div class="loc-map" data-reveal>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x3568ed9839d4c7e5%3A0x93d0ba6cd80a0994!2zKOyjvCnsnbjthLDsmKTshZgg7ZW07JaR7IKs7JeF67aA!5e0!3m2!1sko!2skr!4v1790906330959!5m2!1sko!2skr" title="인터오션 위치 지도" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="loc-panel" id="loc-hq" role="tabpanel" aria-labelledby="loc-tab-hq">
+          <div class="loc-address">
+            <p class="loc-name">본사</p>
+            <h4 class="loc-address-top">부산광역시 남구 신선로 231</h4>
+            <div class="loc-address-bottom">
+              <p class="loc-info-row"><strong>주소</strong><span>부산광역시 남구 신선로 231 (48553)</span></p>
+              <p class="loc-info-row"><strong>전화</strong>
+                <span class="loc-tel"><a href="tel:1660-0528">1660-0528</a></span>
+              </p>
+              <p class="loc-info-row"><strong>메일</strong><a href="mailto:sales@interocean.co.kr">sales@interocean.co.kr</a></p>
+            </div>
+          </div>
+          <div class="loc-links">
+            <a href="https://map.naver.com/p/entry/place/37668433" target="_blank" rel="noopener" title="본사 네이버지도 (새 창)">
+              <span class="loc-link-icon is-naver" aria-hidden="true">N</span>
+              <p>네이버지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="https://maps.app.goo.gl/KUoLoN3McJ16XfuHA" target="_blank" rel="noopener" title="본사 구글지도 (새 창)">
+              <span class="loc-link-icon is-google" aria-hidden="true">G</span>
+              <p>구글지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+        <div class="loc-panel" id="loc-seoul" role="tabpanel" aria-labelledby="loc-tab-seoul" hidden>
+          <div class="loc-address">
+            <p class="loc-name">서울 지사 &amp; 전시장</p>
+            <h4 class="loc-address-top">서울특별시 송파구 중대로 146, 6층</h4>
+            <div class="loc-address-bottom">
+              <p class="loc-info-row"><strong>주소</strong><span>서울특별시 송파구 중대로 146, 6층 (05828)</span></p>
+              <p class="loc-info-row"><strong>전화</strong>
+                <span class="loc-tel"><em>서울지사</em><a href="tel:02-482-5664">02-482-5664</a></span>
+                <span class="loc-tel"><em>전시장</em><a href="tel:1661-6388">1661-6388</a></span>
+              </p>
+              <p class="loc-info-row"><strong>메일</strong><a href="mailto:sales@interocean.co.kr">sales@interocean.co.kr</a></p>
+            </div>
+          </div>
+          <div class="loc-links">
+            <a href="https://map.naver.com/p/entry/place/1895048385" target="_blank" rel="noopener" title="서울 지사 &amp; 전시장 네이버지도 (새 창)">
+              <span class="loc-link-icon is-naver" aria-hidden="true">N</span>
+              <p>네이버지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="https://maps.app.goo.gl/hipVATG1VJNr31VZ8" target="_blank" rel="noopener" title="서울 지사 &amp; 전시장 구글지도 (새 창)">
+              <span class="loc-link-icon is-google" aria-hidden="true">G</span>
+              <p>구글지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+        <div class="loc-panel" id="loc-hbot" role="tabpanel" aria-labelledby="loc-tab-hbot" hidden>
+          <div class="loc-address">
+            <p class="loc-name">고압산소치료 연구센터</p>
+            <h4 class="loc-address-top">부산광역시 수영구 남천서로 13번길 23</h4>
+            <div class="loc-address-bottom">
+              <p class="loc-info-row"><strong>주소</strong><span>부산광역시 수영구 남천서로 13번길 23 (48317)</span></p>
+              <p class="loc-info-row"><strong>전화</strong>
+                <span class="loc-tel"><a href="tel:1661-0528">1661-0528</a></span>
+              </p>
+              <p class="loc-info-row"><strong>메일</strong><a href="mailto:hbot@interocean.co.kr">hbot@interocean.co.kr</a></p>
+            </div>
+          </div>
+          <div class="loc-links">
+            <a href="https://map.naver.com/p/entry/place/1757286137" target="_blank" rel="noopener" title="고압산소치료 연구센터 네이버지도 (새 창)">
+              <span class="loc-link-icon is-naver" aria-hidden="true">N</span>
+              <p>네이버지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="https://maps.app.goo.gl/mCkYSKBTREC1E53P8" target="_blank" rel="noopener" title="고압산소치료 연구센터 구글지도 (새 창)">
+              <span class="loc-link-icon is-google" aria-hidden="true">G</span>
+              <p>구글지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+        <div class="loc-panel" id="loc-lab" role="tabpanel" aria-labelledby="loc-tab-lab" hidden>
+          <div class="loc-address">
+            <p class="loc-name">기업부설연구소</p>
+            <h4 class="loc-address-top">부산광역시 남구 신선로 217-11</h4>
+            <div class="loc-address-bottom">
+              <p class="loc-info-row"><strong>주소</strong><span>부산광역시 남구 신선로 217-11 (48553)</span></p>
+              <p class="loc-info-row"><strong>전화</strong>
+                <span class="loc-tel"><a href="tel:051-715-5667">051-715-5667</a></span>
+              </p>
+              <p class="loc-info-row"><strong>메일</strong><a href="mailto:lab@interocean.co.kr">lab@interocean.co.kr</a></p>
+            </div>
+          </div>
+          <div class="loc-links">
+            <a href="https://map.naver.com/p/entry/place/1615755647" target="_blank" rel="noopener" title="기업부설연구소 네이버지도 (새 창)">
+              <span class="loc-link-icon is-naver" aria-hidden="true">N</span>
+              <p>네이버지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="https://maps.app.goo.gl/z6A4yP8rEvuf5CJTA" target="_blank" rel="noopener" title="기업부설연구소 구글지도 (새 창)">
+              <span class="loc-link-icon is-google" aria-hidden="true">G</span>
+              <p>구글지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+        <div class="loc-panel" id="loc-plant" role="tabpanel" aria-labelledby="loc-tab-plant" hidden>
+          <div class="loc-address">
+            <p class="loc-name">공장</p>
+            <h4 class="loc-address-top">부산광역시 남구 신선로 217-11</h4>
+            <div class="loc-address-bottom">
+              <p class="loc-info-row"><strong>주소</strong><span>부산광역시 남구 신선로 217-11 (48553)</span></p>
+            </div>
+          </div>
+          <div class="loc-links">
+            <a href="https://map.naver.com/p/entry/place/1615755647" target="_blank" rel="noopener" title="공장 네이버지도 (새 창)">
+              <span class="loc-link-icon is-naver" aria-hidden="true">N</span>
+              <p>네이버지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+            <a href="https://maps.app.goo.gl/z6A4yP8rEvuf5CJTA" target="_blank" rel="noopener" title="공장 구글지도 (새 창)">
+              <span class="loc-link-icon is-google" aria-hidden="true">G</span>
+              <p>구글지도</p>
+              <span class="loc-link-arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER : include/footer.html -->
+  <div data-include="../include/footer.html"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sub.js"></script>
+</body>
+</html>

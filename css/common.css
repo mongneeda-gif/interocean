@@ -1,0 +1,252 @@
+@charset "UTF-8";
+
+/* ==================================================
+   Variables
+================================================== */
+:root {
+  --c-primary: #2f6bff;
+  --c-navy: #061a4d;
+  --c-deep: #020a24;
+  --c-black: #000;
+  --c-white: #fff;
+  --c-gray: #9aa3b5;
+  --c-line: rgba(255, 255, 255, .2);
+
+  --ff-kr: "Paperlogy", "Noto Sans KR", sans-serif;
+  --ff-en: "Montserrat", var(--ff-kr);
+  --ff-noto: "Noto Sans KR", sans-serif;
+
+  --inner: 1520px;
+  --gutter: 40px;
+  --header-h: 130px;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* ==================================================
+   font
+================================================== */
+@font-face {
+  font-family: "Paperlogy";
+  src: url("../fonts/Paperlogy-4Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("../fonts/Paperlogy-7Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* ==================================================
+   Base
+================================================== */
+body {
+  font-family: var(--ff-kr);
+  font-size: 16px;
+  color: var(--c-white);
+  background: var(--c-black);
+  overflow-x: hidden;
+}
+body.is-lock { overflow: hidden; }
+/* 안전장치 : 옆으로 튀어나간 요소(슬라이더, 등장 애니메이션 등)가 페이지 가로폭을 늘리지 않도록 잘라냄
+   (body 의 hidden 만으로는 트랙패드·Shift+휠로 옆 스크롤이 되어 푸터 등이 밀려 보임) */
+main { overflow-x: clip; }
+
+.inner {
+  width: 100%;
+  max-width: calc(var(--inner) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.blind {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.skip-nav {
+  position: fixed; top: -100px; left: 0; z-index: 1000;
+  padding: 10px 20px; background: var(--c-primary);
+}
+.skip-nav:focus { top: 0; }
+
+/* scroll reveal (common.js 에서 .is-show 부여) */
+[data-reveal] {
+  opacity: 0; transform: translateY(60px);
+  transition: opacity 1s var(--ease), transform 1.2s var(--ease);
+}
+[data-reveal].is-show { opacity: 1; transform: none; }
+
+/* ==================================================
+   Header
+================================================== */
+.header {
+  position: fixed; top: 0; left: 0; z-index: 100;
+  width: 100%; height: var(--header-h);
+  transition: background-color .4s, backdrop-filter .4s;
+}
+.header .inner {
+  display: flex; align-items: center; height: 100%;
+}
+.header.is-scrolled {
+  background: rgba(0, 0, 0, .6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.logo { flex-shrink: 0; }
+.logo img { height: 42px; width: auto; }
+
+.gnb { margin-left: auto; align-self: stretch; }
+.gnb > ul { display: flex; gap: 56px; height: 100%; }
+/* li 높이 = 헤더 높이 → 2depth 까지 마우스가 끊기지 않고 이어짐 */
+.gnb > ul > li { position: relative; display: flex; align-items: center; }
+.gnb > ul > li > a {
+  position: relative; display: block;
+  font-size: 18px; font-weight: 500; opacity: .85;
+  transition: opacity .3s, color .3s;
+}
+.gnb > ul > li > a::after {
+  content: ""; position: absolute; left: 0; bottom: -6px;
+  width: 100%; height: 1px; background: currentColor;
+  transform: scaleX(0); transform-origin: right;
+  transition: transform .4s var(--ease);
+}
+.gnb > ul > li:hover > a,
+.gnb > ul > li:focus-within > a { opacity: 1; }
+.gnb > ul > li:hover > a::after,
+.gnb > ul > li:focus-within > a::after { transform: scaleX(1); transform-origin: left; }
+/* 현재 메뉴 (common.js 에서 aria-current="page" 부여) */
+.gnb > ul > li > a[aria-current="page"] { color: var(--c-primary); opacity: 1; }
+.gnb > ul > li > a[aria-current="page"]::after { transform: scaleX(1); }
+
+/* 2depth : 마우스 오버 / 키보드 포커스 시 노출 */
+.gnb .depth2 {
+  position: absolute; top: 75%; left: 50%;
+  min-width: 190px; padding: 14px 0;
+  background: rgba(15, 16, 20, 0.98);
+  border: 1px solid rgba(255, 255, 255, .1); border-radius: 12px;
+  text-align: center;
+  opacity: 0; visibility: hidden;
+  transform: translate(-50%, -10px);
+  transition: opacity .3s, visibility .3s, transform .4s var(--ease);
+}
+.gnb .has-sub:hover .depth2,
+.gnb .has-sub:focus-within .depth2 {
+  opacity: 1; visibility: visible;
+  transform: translate(-50%, 0);
+}
+.gnb .depth2 a {
+  display: block; padding: 9px 24px;
+  font-size: 16px; white-space: nowrap;
+  color: rgba(255, 255, 255, .7);
+  transition: color .3s;
+}
+.gnb .depth2 a:hover,
+.gnb .depth2 a:focus-visible { color: var(--c-white); }
+.gnb .depth2 a[aria-current="page"] { color: var(--c-primary); font-weight: 700; }
+
+.btn-mall {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-left: 64px; padding: 0 22px; height: 42px;
+  border: 1px solid rgba(255, 255, 255, .7); border-radius: 999px;
+  font-size: 17px; font-weight: 500;
+  transition: background-color .3s, color .3s;
+}
+.btn-mall svg { width: 14px; height: 14px; }
+.btn-mall:hover { background: var(--c-white); color: var(--c-navy); }
+
+.btn-menu { display: none; }
+
+/* ==================================================
+   Footer
+================================================== */
+.footer {
+  padding: 60px 0 70px;
+  background: #151515;
+  color: #8a8a8a;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.footer .inner {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 40px;
+}
+.footer-info a:hover { color: var(--c-white); }
+.footer-info .copyright { margin-top: 4px; }
+
+.footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 18px; }
+.sns { display: flex; gap: 14px; }
+.sns a { display: block; width: 24px; height: 24px; color: #ddd; transition: color .3s; }
+.sns a:hover { color: var(--c-white); }
+.sns svg { width: 100%; height: 100%; }
+
+.family-site select {
+  width: 190px; height: 38px; padding: 0 36px 0 14px;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23999' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 14px center / 10px;
+  border: 1px solid #444; border-radius: 2px;
+  color: #aaa; font-size: 13px;
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+}
+.family-site option { color: #000; }
+
+/* ==================================================
+   Responsive
+================================================== */
+@media (max-width: 1280px) {
+  .gnb > ul { gap: 32px; }
+  .btn-mall { margin-left: 40px; }
+}
+
+@media (max-width: 1024px) {
+  :root { --gutter: 24px; --header-h: 70px; }
+
+  .btn-menu {
+    display: flex; flex-direction: column; justify-content: center; gap: 6px;
+    width: 32px; height: 32px; margin-left: 20px; position: relative; z-index: 2;
+  }
+  .btn-menu span {
+    display: block; width: 100%; height: 2px; background: var(--c-white);
+    transition: transform .3s, opacity .3s;
+  }
+  .header.is-open .btn-menu span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .header.is-open .btn-menu span:nth-child(2) { opacity: 0; }
+  .header.is-open .btn-menu span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .btn-mall { margin-left: auto; height: 36px; padding: 0 16px; font-size: 13px; }
+
+  .gnb {
+    position: fixed; inset: 0; z-index: 1;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(2, 10, 36, .97);
+    opacity: 0; visibility: hidden; transition: opacity .4s, visibility .4s;
+  }
+  .header.is-open .gnb { opacity: 1; visibility: visible; }
+  .gnb > ul { flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+  .gnb > ul > li { flex-direction: column; }
+  .gnb > ul > li > a { font-size: 22px; }
+
+  /* 모바일 : 2depth 항상 펼침 */
+  .gnb .depth2,
+  .gnb .has-sub:hover .depth2,
+  .gnb .has-sub:focus-within .depth2 {
+    position: static; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px;
+    min-width: 0; max-width: 320px; margin-top: 14px; padding: 0;
+    background: none; border: 0;
+    opacity: 1; visibility: visible; transform: none;
+  }
+  .gnb .depth2 a { padding: 4px 0; font-size: 15px; }
+}
+
+@media (max-width: 768px) {
+  :root { --gutter: 16px; }
+  .logo img { height: 22px; }
+  .footer .inner { flex-direction: column; align-items: flex-start; }
+  .footer-right { align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+ 

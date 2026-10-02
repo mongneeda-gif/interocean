@@ -1,0 +1,51 @@
+<!-- ===================== HEADER (공통) =====================
+  - 경로는 pages/ 폴더의 html 기준
+  - 현재 메뉴 : 페이지 <body data-gnb="1depth값" data-sub="2depth값"> 과 같은 링크에 aria-current 자동 부여 (common.js)
+-->
+<header id="header" class="header">
+  <div class="inner">
+    <h1 class="logo">
+      <a href="main.html">
+        <img src="../images/common/logo.png" alt="인터오션">
+      </a>
+    </h1>
+
+    <nav class="gnb" aria-label="주 메뉴">
+      <ul>
+        <li class="has-sub">
+          <a href="company_about.html" data-gnb="company">기업소개</a>
+          <ul class="depth2">
+            <li><a href="company_about.html" data-sub="about">인터오션 소개</a></li>
+            <li><a href="company_ci.html" data-sub="ci">CI</a></li>
+            <li><a href="company_cert.html" data-sub="cert">인증사항</a></li>
+            <li><a href="company_activity.html" data-sub="activity">활동성과</a></li>
+            <li><a href="company_rnd.html" data-sub="rnd">R&amp;D 연구성과</a></li>
+            <li><a href="company_location.html" data-sub="location">찾아오시는 길</a></li>
+          </ul>
+        </li>
+        <li><a href="business.html" data-gnb="business">사업분야</a></li>
+        <li><a href="brand.html" data-gnb="brand">브랜드 유통</a></li>
+        <li class="has-sub">
+          <a href="tech_drysuit.html" data-gnb="process">제조기술</a>
+          <ul class="depth2">
+            <li><a href="tech_drysuit.html" data-sub="drysuit">드라이슈트 제조</a></li>
+            <li><a href="#" data-sub="quality">생산 · 품질관리</a></li>
+            <li><a href="#" data-sub="research">연구개발</a></li>
+            <li><a href="#" data-sub="future">미래제조계획</a></li>
+          </ul>
+        </li>
+        <li><a href="support.html" data-gnb="support">기술지원</a></li>
+        <li><a href="inquiry.html" data-gnb="inquiry">사업문의</a></li>
+      </ul>
+    </nav>
+    <a href="https://interocean-mall.com/" class="btn-mall" target="_blank" rel="noopener">
+      인터오션몰
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    </a>
+
+    <button type="button" class="btn-menu" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+

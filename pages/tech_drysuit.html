@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <title>드라이슈트 제조 | 제조기술 | 인터오션</title>
+  <meta name="description" content="해군·해양경찰 및 국내 주요 병원·해양기관의 장비를 전문적으로 개발·공급하며, 대한민국 해양산업과 헬스케어의 기반을 이루는 잠수·고압산소 솔루션 전 과정을 책임지고 있습니다.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body data-gnb="process" data-sub="drysuit">
+  <a href="#content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 상단 배경 영상 (자동재생은 muted 필수 / playsinline : iOS 전체화면 방지) -->
+  <div class="page-bg-video" aria-hidden="true">
+    <video src="../images/sub/ocean02.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- HEADER : include/header.html -->
+  <div data-include="../include/header.html"></div>
+
+  <main id="content" class="sub">
+
+    <!-- ===================== SUB TOP (타이틀 + 탭) ===================== -->
+    <div class="sub-top">
+      <div class="sub-head">
+        <p class="sub-cate">제조기술</p>
+        <h2 class="sub-title">MANUFACTURING TECHNOLOGY</h2>
+      </div>
+
+      <nav class="lnb" aria-label="제조기술 하위 메뉴">
+        <ul>
+          <li><a href="tech_drysuit.html" aria-current="page">드라이슈트 제조</a></li>
+          <li><a href="#">생산 · 품질관리</a></li>
+          <li><a href="#">연구개발</a></li>
+          <li><a href="#">미래제조계획</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- ===================== 인트로 (떠 있는 이미지 + 타이틀) ===================== -->
+    <section class="tech-intro">
+      <!-- data-speed-x : 스크롤 시 왼쪽 이동 비율 (sub.js 패럴랙스) -->
+      <div class="tech-float" aria-hidden="true">
+        <img src="../images/sub/tech_float01.jpg" alt="" class="f1" data-speed-x="0.3">
+        <img src="../images/sub/tech_float02.jpg" alt="" class="f2" data-speed-x="0.15">
+        <img src="../images/sub/tech_float03.jpg" alt="" class="f3" data-speed-x="0.25">
+        <img src="../images/sub/tech_float04.jpg" alt="" class="f4" data-speed-x="0.4">
+        <img src="../images/sub/tech_float05.jpg" alt="" class="f5" data-speed-x="0.2">
+      </div>
+
+      <!-- 텍스트도 패럴랙스 : 이미지보다 빠르게 위로 올라옴 -->
+      <div class="tech-intro-txt" data-speed="0.35">
+        <h3 class="tech-intro-title" data-reveal>사용 환경을 고려한<br><strong>드라이슈트 제조</strong></h3>
+        <p class="tech-intro-desc" data-reveal>사용 목적과 체형, 필요한 기능을 살펴 제작 사양을 검토합니다.<br>설계부터 제작과 품질 확인까지, 각 단계의 요구사항을 제품에 반영합니다.</p>
+      </div>
+    </section>
+
+    <div class="sub-content tech inner">
+
+      <!-- data-expand : 처음엔 화면 가로 꽉 참 → 스크롤하면 제자리 크기로 줄어듦 (sub.js) -->
+      <div class="tech-visual" data-expand>
+        <img src="../images/sub/tech_main.jpg" alt="인터오션 공장에서 작업자가 드라이슈트를 제작하는 모습">
+      </div>
+
+      <!-- ===================== 드라이슈트 제작 과정 ===================== -->
+      <section class="core">
+        <h3 class="core-title" data-reveal>드라이슈트 제작 과정</h3>
+
+        <!-- 첫 항목 기본 활성(is-active), 마우스 오버 시 해당 항목 활성 -->
+        <ol class="core-list">
+          <li class="is-active" data-reveal>
+            <span class="core-num">01</span>
+            <div class="core-box">
+              <strong class="core-name">요구사항 검토와 설계</strong>
+              <p class="core-desc">사용 목적 확인 · 치수 확인 · 제작 사양 협의</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="core-num">02</span>
+            <div class="core-box">
+              <strong class="core-name">제작과 마감</strong>
+              <p class="core-desc">사양에 따른 제작 · 부위별 마감 · 접합부 확인</p>
+            </div>
+          </li>
+          <li data-reveal>
+            <span class="core-num">03</span>
+            <div class="core-box">
+              <strong class="core-name">품질 확인과 사용 안내</strong>
+              <p class="core-desc">제품 상태 확인 · 사용·관리 안내 · 수선 상담</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER : include/footer.html -->
+  <div data-include="../include/footer.html"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sub.js"></script>
+</body>
+</html>
