@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <title>카탈로그 | 뉴스룸 | 인터오션</title>
+  <meta name="description" content="㈜인터오션 및 취급 브랜드 카탈로그를 이북으로 보거나 웹하드에서 내려받으실 수 있습니다.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body data-gnb="newsroom" data-sub="catalog">
+  <a href="#content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 상단 배경 영상 (자동재생은 muted 필수 / playsinline : iOS 전체화면 방지) -->
+  <div class="page-bg-video" aria-hidden="true">
+    <video src="../images/sub/ocean02.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- HEADER : include/header.html -->
+  <div data-include="../include/header.html"></div>
+
+  <main id="content" class="sub">
+
+    <!-- ===================== SUB TOP (타이틀 + 탭) ===================== -->
+    <div class="sub-top">
+      <div class="sub-head">
+        <p class="sub-cate">카탈로그</p>
+        <h2 class="sub-title">CATALOG</h2>
+      </div>
+
+      <nav class="lnb" aria-label="뉴스룸 하위 메뉴">
+        <ul>
+          <li><a href="news_notice.html">공지사항</a></li>
+          <li><a href="news_voice.html">고객의 소리</a></li>
+          <li><a href="news_manual.html">사용설명서</a></li>
+          <li><a href="news_catalog.html" aria-current="page">카탈로그</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sub-content catalog inner">
+
+      <!-- ===================== 웹하드 안내 =====================
+        - 카탈로그 다운로드 : 웹하드 주소 연결 필요 (현재 #) -->
+      <section class="cat-webhard" data-reveal>
+        <div class="cat-webhard-txt">
+          <dl class="cat-account">
+            <div><dt>웹하드 ID</dt><dd>ocean_guest</dd></div>
+            <div><dt>PW</dt><dd>ocean6225665</dd></div>
+          </dl>
+          <p class="cat-webhard-desc">㈜인터오션에서 발행된 카탈로그는 웹하드에서 다운로드 가능합니다.</p>
+          <a href="http://doc.interocean.co.kr:5050/" class="cat-webhard-btn" target="_blank" rel="noopener">
+            카탈로그 다운로드
+            <span class="ico-arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <!-- 클라우드 업로드 일러스트 (장식) -->
+        <img class="cat-webhard-art" src="../images/sub/catalog/webhard_art.svg" alt="" aria-hidden="true">
+      </section>
+
+      <!-- ===================== 카탈로그 목록 =====================
+        - 표지 이미지 : images/sub/catalog/ (가로·세로 비율이 달라도 칸 아래쪽에 맞춰 정렬)
+         -->
+      <section class="cat-sec">
+        <ul class="cat-list">
+          <li class="cat-item" data-reveal>
+            <div class="cat-cover"><img src="../images/sub/catalog/catalog_01.jpg" alt="인터오션 종합본 카탈로그 표지" loading="lazy"></div>
+            <p class="cat-name">종합본</p>
+            <a href="https://online.fliphtml5.com/enllm/zbhh/" class="cat-btn" target="_blank" rel="noopener">이북 보기</a>
+          </li>
+          <li class="cat-item" data-reveal>
+            <div class="cat-cover"><img src="../images/sub/catalog/catalog_02.jpg" alt="걸 카탈로그 표지" loading="lazy"></div>
+            <p class="cat-name">걸</p>
+            <a href="https://online.fliphtml5.com/dbhzk/clip/#p=1" class="cat-btn" target="_blank" rel="noopener">이북 보기</a>
+          </li>
+          <li class="cat-item" data-reveal>
+            <div class="cat-cover"><img src="../images/sub/catalog/catalog_03.jpg" alt="스트림트레일 카탈로그 표지" loading="lazy"></div>
+            <p class="cat-name">스트림트레일</p>
+            <a href="https://online.fliphtml5.com/enllm/bnae/" class="cat-btn" target="_blank" rel="noopener">이북 보기</a>
+          </li>
+          <li class="cat-item" data-reveal>
+            <div class="cat-cover"><img src="../images/sub/catalog/catalog_04.jpg" alt="라줄리 카탈로그 표지" loading="lazy"></div>
+            <p class="cat-name">라줄리</p>
+            <a href="https://online.fliphtml5.com/enllm/zfca/" class="cat-btn" target="_blank" rel="noopener">이북 보기</a>
+          </li>
+         
+          <li class="cat-item" data-reveal>
+            <div class="cat-cover"><img src="../images/sub/catalog/catalog_05.jpg" alt="크레씨 카탈로그 표지" loading="lazy"></div>
+            <p class="cat-name">크레씨</p>
+            <a href="https://online.fliphtml5.com/enllm/qmja/" class="cat-btn" target="_blank" rel="noopener">이북 보기</a>
+          </li>
+          <li class="cat-item" data-reveal>
+            <div class="cat-cover"><img src="../images/sub/catalog/catalog_06.jpg" alt="오션리프 카탈로그 표지" loading="lazy"></div>
+            <p class="cat-name">오션리프</p>
+            <a href="https://online.fliphtml5.com/enllm/hfht/" class="cat-btn" target="_blank" rel="noopener">이북 보기</a>
+          </li>
+          <li class="cat-item" data-reveal>
+            <div class="cat-cover"><img src="../images/sub/catalog/catalog_07.jpg" alt="트라이온 카탈로그 표지" loading="lazy"></div>
+            <p class="cat-name">트라이온</p>
+            <a href="https://online.fliphtml5.com/enllm/rdwl/" class="cat-btn" target="_blank" rel="noopener">이북 보기</a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER : include/footer.html -->
+  <div data-include="../include/footer.html"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sub.js"></script>
+</body>
+</html>

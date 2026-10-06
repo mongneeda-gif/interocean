@@ -79,6 +79,44 @@ main { overflow-x: clip; }
 }
 [data-reveal].is-show { opacity: 1; transform: none; }
 
+/* 링크 화살표 아이콘 : <span class="ico-arrow" aria-hidden="true"></span>
+   SVG 파일을 mask 로 사용 → 색은 글자색(currentColor)을 따라감 (버튼 호버 시 함께 변경)
+   크기는 사용하는 곳에서 width / height 지정 */
+.ico-arrow {
+  display: inline-block; flex-shrink: 0; width: 14px; height: 14px;
+  background-color: currentColor;
+  -webkit-mask: url("../images/common/icon_arrow_link.svg") no-repeat center / contain;
+          mask: url("../images/common/icon_arrow_link.svg") no-repeat center / contain;
+}
+/* 다운로드 아이콘 : <span class="ico-download" aria-hidden="true"></span> (방식은 .ico-arrow 와 같음) */
+.ico-download {
+  display: inline-block; flex-shrink: 0; width: 16px; height: 16px;
+  background-color: currentColor;
+  -webkit-mask: url("../images/common/icon_download.svg") no-repeat center / contain;
+          mask: url("../images/common/icon_download.svg") no-repeat center / contain;
+}
+/* 아래 화살표 아이콘 : <span class="ico-arrow-down" aria-hidden="true"></span> (방식은 .ico-arrow 와 같음) */
+.ico-arrow-down {
+  display: inline-block; flex-shrink: 0; width: 16px; height: 16px;
+  background-color: currentColor;
+  -webkit-mask: url("../images/common/icon_arrow_down.svg") no-repeat center / contain;
+          mask: url("../images/common/icon_arrow_down.svg") no-repeat center / contain;
+}
+/* 오른쪽 화살표 아이콘 : <span class="ico-arrow-right" aria-hidden="true"></span> (방식은 .ico-arrow 와 같음) */
+.ico-arrow-right {
+  display: inline-block; flex-shrink: 0; width: 14px; height: 14px;
+  background-color: currentColor;
+  -webkit-mask: url("../images/common/icon_arrow_right.svg") no-repeat center / contain;
+          mask: url("../images/common/icon_arrow_right.svg") no-repeat center / contain;
+}
+/* 검색(돋보기) 아이콘 : <span class="ico-search" aria-hidden="true"></span> (방식은 .ico-arrow 와 같음) */
+.ico-search {
+  display: inline-block; flex-shrink: 0; width: 20px; height: 20px;
+  background-color: currentColor;
+  -webkit-mask: url("../images/common/icon_search.svg") no-repeat center / contain;
+          mask: url("../images/common/icon_search.svg") no-repeat center / contain;
+}
+
 /* ==================================================
    Header
 ================================================== */
@@ -97,7 +135,11 @@ main { overflow-x: clip; }
 }
 
 .logo { flex-shrink: 0; }
-.logo img { height: 42px; width: auto; }
+/* 그림자 : 밝은 배경 영상 위에서도 로고가 묻히지 않도록 (filter → 로고 모양을 따라 그림자) */
+.logo img {
+  height: 30px; width: auto;
+  filter: drop-shadow(0 2px 2px rgba(2, 16, 50, .1)) drop-shadow(0 2px 2px rgba(2, 16, 50, .15));
+}
 
 .gnb { margin-left: auto; align-self: stretch; }
 .gnb > ul { display: flex; gap: 56px; height: 100%; }
@@ -126,7 +168,7 @@ main { overflow-x: clip; }
 .gnb .depth2 {
   position: absolute; top: 75%; left: 50%;
   min-width: 190px; padding: 14px 0;
-  background: rgba(15, 16, 20, 0.98);
+  background: rgba(5, 19, 54, .97); /* 짙은 네이비 (--c-deep 과 --c-navy 사이) */
   border: 1px solid rgba(255, 255, 255, .1); border-radius: 12px;
   text-align: center;
   opacity: 0; visibility: hidden;
@@ -155,7 +197,6 @@ main { overflow-x: clip; }
   font-size: 17px; font-weight: 500;
   transition: background-color .3s, color .3s;
 }
-.btn-mall svg { width: 14px; height: 14px; }
 .btn-mall:hover { background: var(--c-white); color: var(--c-navy); }
 
 .btn-menu { display: none; }
@@ -184,7 +225,7 @@ main { overflow-x: clip; }
 
 .family-site select {
   width: 190px; height: 38px; padding: 0 36px 0 14px;
-  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23999' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 14px center / 10px;
+  background: transparent url("../images/common/icon_select_arrow_gray.svg") no-repeat right 14px center / 10px;
   border: 1px solid #444; border-radius: 2px;
   color: #aaa; font-size: 13px;
   appearance: none; -webkit-appearance: none; cursor: pointer;

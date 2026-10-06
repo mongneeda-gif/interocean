@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <title>사용설명서 | 뉴스룸 | 인터오션</title>
+  <meta name="description" content="인터오션 제품 사용설명서, 관리 방법, 업데이트 프로그램을 내려받으실 수 있습니다.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body data-gnb="newsroom" data-sub="manual">
+  <a href="#content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 상단 배경 영상 (자동재생은 muted 필수 / playsinline : iOS 전체화면 방지) -->
+  <div class="page-bg-video" aria-hidden="true">
+    <video src="../images/sub/ocean02.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- HEADER : include/header.html -->
+  <div data-include="../include/header.html"></div>
+
+  <main id="content" class="sub">
+
+    <!-- ===================== SUB TOP (타이틀 + 탭) ===================== -->
+    <div class="sub-top">
+      <div class="sub-head">
+        <p class="sub-cate">사용설명서</p>
+        <h2 class="sub-title">USER MANUAL</h2>
+      </div>
+
+      <nav class="lnb" aria-label="뉴스룸 하위 메뉴">
+        <ul>
+          <li><a href="news_notice.html">공지사항</a></li>
+          <li><a href="news_voice.html">고객의 소리</a></li>
+          <li><a href="news_manual.html" aria-current="page">사용설명서</a></li>
+          <li><a href="news_catalog.html">카탈로그</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sub-content manual inner">
+
+      <!-- ===================== 사용설명서 상세 : 공지사항 상세와 같은 구조 ===================== -->
+      <article class="board-view" data-reveal>
+        <header class="view-head">
+          <h3 class="view-title">크레씨 레오나르도 사용설명서 (PDF)</h3>
+          <dl class="view-meta">
+            <div><dt>작성일</dt><dd>2024.05.14</dd></div>
+            <div><dt>조회</dt><dd>379</dd></div>
+          </dl>
+        </header>
+
+        <!-- 첨부파일 (없으면 영역 삭제) / 실제 파일 연결 필요 -->
+        <div class="view-files">
+          <strong>첨부파일</strong>
+          <ul>
+            <li>
+              <a href="#" download>
+                <span class="ico-download" aria-hidden="true"></span>
+                레오나르도 사용설명서.pdf
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 본문 : 관리자 에디터 입력 영역 (기존 글의 제품 이미지는 이전 후 삽입) -->
+        <div class="view-body">
+          <p>레오나르도 사용설명서를 위 <strong>첨부파일</strong>에서 다운받으실 수 있습니다.</p>
+        </div>
+
+        <!-- 이전 · 다음 글 -->
+        <ul class="view-nav">
+          <li>
+            <span class="view-nav-label">이전 글</span>
+            <a href="news_manual_view.html">ATMOS 미션투 업데이트 프로그램 다운로드(v1.018)</a>
+          </li>
+          <li>
+            <span class="view-nav-label">다음 글</span>
+            <a href="news_manual_view.html">이지 손목씰, 목씰 셀프교체방법</a>
+          </li>
+        </ul>
+
+        <div class="view-btns">
+          <a href="news_manual.html" class="btn-list">목록</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER : include/footer.html -->
+  <div data-include="../include/footer.html"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sub.js"></script>
+</body>
+</html>

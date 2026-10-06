@@ -326,7 +326,7 @@
   border: 1px solid rgba(255, 255, 255, .6); border-radius: 999px;
   font-size: 14px; transition: background-color .3s, color .3s;
 }
-.btn-line svg { width: 14px; height: 14px; }
+.btn-line .ico-arrow-right { width: 14px; height: 14px; }
 .btn-line:hover { background: var(--c-white); color: #1c1c1c; }
 
 .location-img { width: 570px; margin: -100px 0 -30px; }

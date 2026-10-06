@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/common/favicon.ico">
+  <title>고객의 소리 | 뉴스룸 | 인터오션</title>
+  <meta name="description" content="인터오션 제품과 서비스에 대한 칭찬, 제안, 불편 사항을 들려주세요.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/sub.css">
+</head>
+<body data-gnb="newsroom" data-sub="voice">
+  <a href="#content" class="skip-nav">본문 바로가기</a>
+
+  <!-- 상단 배경 영상 (자동재생은 muted 필수 / playsinline : iOS 전체화면 방지) -->
+  <div class="page-bg-video" aria-hidden="true">
+    <video src="../images/sub/ocean02.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <!-- HEADER : include/header.html -->
+  <div data-include="../include/header.html"></div>
+
+  <main id="content" class="sub">
+
+    <!-- ===================== SUB TOP (타이틀 + 탭) ===================== -->
+    <div class="sub-top">
+      <div class="sub-head">
+        <p class="sub-cate">고객의 소리</p>
+        <h2 class="sub-title">VOICE OF CUSTOMER</h2>
+      </div>
+
+      <nav class="lnb" aria-label="뉴스룸 하위 메뉴">
+        <ul>
+          <li><a href="news_notice.html">공지사항</a></li>
+          <li><a href="news_voice.html" aria-current="page">고객의 소리</a></li>
+          <li><a href="news_manual.html">사용설명서</a></li>
+          <li><a href="news_catalog.html">카탈로그</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sub-content voice inner">
+
+      <!-- ===================== 고객의 소리 =====================
+        - 사업문의(inquiry.html)와 같은 구조 · 스타일 (.inq-*) → 입력 확인 스크립트도 sub.js 의 "사업문의 폼" 공유
+        - 왼쪽 : 스크롤 시 고정(sticky) - 안내 + 처리 절차 + 연락처
+        - 오른쪽 : 접수 폼 (* 필수 항목은 required) -->
+      <section class="inq-wrap">
+        <div class="inq-side">
+          <div class="inq-side-inner" data-reveal>
+            <h3 class="inq-title">YOUR VOICE<br>MATTERS</h3>
+            <p class="inq-slogan">고객님의 한마디가 더 나은 인터오션을 만듭니다.</p>
+            <p class="voc-desc">제품·서비스 이용 중 느끼신 칭찬, 제안, 불편 사항을 남겨 주세요.<br>담당 부서에서 확인 후 빠르게 답변드리겠습니다.</p>
+
+            <!-- 처리 절차 -->
+            <ol class="voc-steps">
+              <li><em>01</em><strong>접수</strong><span>온라인 등록</span></li>
+              <li><em>02</em><strong>검토</strong><span>담당 부서 확인</span></li>
+              <li><em>03</em><strong>답변</strong><span>이메일 · 전화</span></li>
+            </ol>
+
+            <dl class="inq-info">
+              <div><dt>TEL</dt><dd><a href="tel:1660-0528">1660-0528</a></dd></div>
+              <div><dt>E-MAIL</dt><dd><a href="mailto:sales@interocean.co.kr">sales@interocean.co.kr</a></dd></div>
+              <div><dt>HOURS</dt><dd>평일 09:00 ~ 18:00 (주말·공휴일 휴무)</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <form class="inq-form" action="#" method="post" enctype="multipart/form-data" novalidate data-reveal>
+          <!-- 유형 -->
+          <fieldset class="inq-field">
+            <legend class="inq-label">유형<span class="req" aria-label="필수">*</span></legend>
+            <div class="inq-types is-4">
+              <label><input type="radio" name="type" value="praise" checked><span>칭찬</span></label>
+              <label><input type="radio" name="type" value="suggest"><span>제안</span></label>
+              <label><input type="radio" name="type" value="complaint"><span>불편·불만</span></label>
+              <label><input type="radio" name="type" value="etc"><span>기타</span></label>
+            </div>
+          </fieldset>
+
+          <div class="inq-row">
+            <div class="inq-field">
+              <label class="inq-label" for="vocName">이름<span class="req" aria-label="필수">*</span></label>
+              <input type="text" id="vocName" name="name" class="inq-input" required>
+            </div>
+            <div class="inq-field">
+              <label class="inq-label" for="vocTel">연락처<span class="req" aria-label="필수">*</span></label>
+              <input type="tel" id="vocTel" name="tel" class="inq-input" placeholder="예) 010-0000-0000" required>
+            </div>
+          </div>
+
+          <div class="inq-field">
+            <label class="inq-label" for="vocEmail">이메일<span class="req" aria-label="필수">*</span></label>
+            <input type="email" id="vocEmail" name="email" class="inq-input" placeholder="답변 받으실 이메일 주소" required>
+          </div>
+
+          <div class="inq-row">
+            <div class="inq-field">
+              <label class="inq-label" for="vocProduct">제품명</label>
+              <input type="text" id="vocProduct" name="product" class="inq-input" placeholder="해당 제품이 있는 경우">
+            </div>
+            <div class="inq-field">
+              <label class="inq-label" for="vocShop">구매처</label>
+              <input type="text" id="vocShop" name="shop" class="inq-input" placeholder="예) 인터오션몰, 대리점명">
+            </div>
+          </div>
+
+          <div class="inq-field">
+            <label class="inq-label" for="vocSubject">제목<span class="req" aria-label="필수">*</span></label>
+            <input type="text" id="vocSubject" name="subject" class="inq-input" required>
+          </div>
+
+          <div class="inq-field">
+            <label class="inq-label" for="vocContent">내용<span class="req" aria-label="필수">*</span></label>
+            <textarea id="vocContent" name="content" class="inq-input inq-textarea" placeholder="구매 시기, 사용 환경, 겪으신 상황 등을 자세히 적어 주시면 더 정확히 확인할 수 있습니다." required></textarea>
+          </div>
+
+          <div class="inq-field">
+            <span class="inq-label">첨부파일</span>
+            <label class="inq-file">
+              <input type="file" name="file" accept="image/*,.pdf">
+              <span class="inq-file-name">선택된 파일 없음</span>
+              <span class="inq-file-btn">파일 선택</span>
+            </label>
+            <p class="inq-help">제품 사진, 영수증 등 (이미지·PDF, 최대 10MB)</p>
+          </div>
+
+          <!-- 개인정보 수집·이용 동의 -->
+          <div class="inq-field">
+            <span class="inq-label">개인정보 수집·이용 동의<span class="req" aria-label="필수">*</span></span>
+            <div class="inq-terms" tabindex="0">
+              <p>[임시] ㈜인터오션은 고객의 소리 접수 및 답변을 위해 아래와 같이 개인정보를 수집·이용합니다.</p>
+              <p>1. 수집 항목 : 이름, 연락처, 이메일</p>
+              <p>2. 수집 목적 : 접수 내용 확인 및 답변, 서비스 개선</p>
+              <p>3. 보유 기간 : 처리 완료 후 [임시] 년 (관계 법령에 따라 보존이 필요한 경우 해당 기간)</p>
+              <p>※ 동의를 거부할 수 있으며, 거부 시 접수가 제한됩니다. 실제 문구는 개인정보처리방침에 맞춰 확정해 주세요.</p>
+            </div>
+            <label class="inq-agree">
+              <input type="checkbox" name="agree" required>
+              <span>개인정보 수집·이용에 동의합니다.</span>
+            </label>
+          </div>
+
+          <div class="inq-btns">
+            <button type="reset" class="inq-btn inq-btn-cancel"><span>취소</span></button>
+            <button type="submit" class="inq-btn inq-btn-submit"><span>등록하기</span></button>
+          </div>
+          <p class="inq-msg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER : include/footer.html -->
+  <div data-include="../include/footer.html"></div>
+
+  <script src="../js/common.js"></script>
+  <script src="../js/sub.js"></script>
+</body>
+</html>
