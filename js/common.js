@@ -71,6 +71,33 @@ const initHeader = () => {
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 };
 
+/* ---------- Top button : include/btn-top.html ----------
+   data-offset(px) 이상 스크롤 시 노출, 클릭 시 맨 위로 */
+const initTopButton = () => {
+  const btn = document.querySelector('.btn-top');
+  if (!btn) return;
+  const offset = Number(btn.dataset.offset) || 300;
+  let ticking = false;
+
+  const onScroll = () => {
+    btn.classList.toggle('is-show', window.scrollY > offset);
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+  onScroll();
+
+  btn.addEventListener('click', () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+};
+
 /* ---------- Scroll reveal ----------
    기본 : 한 번 나타나면 유지
    <body data-reveal-repeat> : 페이지 전체 반복 - 위로 스크롤해 요소가 화면 아래로 벗어나면 원위치 → 다시 내리면 재등장
@@ -102,4 +129,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   initReveal();
   await loadIncludes();
   initHeader();
+  initTopButton();
 });
