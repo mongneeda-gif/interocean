@@ -17,7 +17,7 @@
 }
 .sc-title strong { font-weight: 700; }
 .sc-desc {
-  margin-top: 14px; font-family: var(--ff-noto); font-size: 18px; color: rgba(255, 255, 255, 1); font-weight: 600;
+  margin-top: 14px; font-family: var(--ff-noto); font-size: 18px; color: rgba(255, 255, 255, 1); 
 }
 .sc-label {
   font-family: var(--ff-en); font-size: 14px; font-weight: 700;
@@ -34,7 +34,7 @@
 .visual-bg {
   position: absolute; inset: 0; z-index: -1;
   background:
-    url("../images/main/visual_bg.jpg") no-repeat center top / cover,
+   
     radial-gradient(ellipse 60% 40% at 50% 0%, rgba(90, 150, 255, .55), transparent 70%),
     linear-gradient(180deg, #0d3aa6 0%, #0a2a86 25%, #071d63 55%, #061544 80%, #041139 100%);
 }
@@ -375,12 +375,17 @@
 @media (max-width: 768px) {
   .sc-title { font-size: 28px; }
   .sc-desc { padding: 0 var(--gutter); }
-
   .hero { height: auto; min-height: 80vh; }
 
   .intro { grid-template-columns: 1fr; padding-top: 40px; }
-  .intro-line, .intro-diver { display: none; }
-  .intro-right { padding: 60px 0 0; }
+  
+  /* 다이버 : 영역 차지 없이 글자 뒤에 깔림, PC 처럼 스크롤 따라 내려옴 (main.js 가 translate 조절)
+     isolation : .intro 안에서 z-index -1 이 페이지 배경 뒤로 숨지 않도록 */
+  .intro { isolation: isolate; }
+  .intro-diver { top: 60px; left: auto; right: 0; z-index: -1; width: 220px; }
+  /* 세로선 : 오른쪽으로 옮겨 다이버(머리 쪽) 아래로 / 글자 뒤 (다이버가 DOM 상 뒤라 선 위에 그려짐) */
+  .intro-line { left: auto; right: 40px; z-index: -1; }
+  .intro-right { padding: 60px 60px 0 0; }
   .intro-right br { display: none; }
   .intro-right p + p { margin-top: 30px; }
   .sc-visual { padding-bottom: 60px; }

@@ -612,21 +612,23 @@
   content: ""; position: absolute; top: 9px; left: 0; right: 0;
   height: 2px; background: rgba(255, 255, 255, .2);
 }
+/* 박스 : 미래제조계획 .fut-card 와 같은 스타일 */
 .qc-flow-list li {
   position: relative;
-  padding: 40px 34px 46px; border: 1px solid rgba(255, 255, 255, .15); border-radius: 18px;
-  background: rgba(255, 255, 255, .04);
-  transition: background-color .4s, border-color .4s, translate .4s var(--ease);
+  padding: 50px 50px 54px; border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02));
+  border: 1px solid rgba(255, 255, 255, .12);
+  transition: border-color .4s, background-color .4s;
 }
 .qc-flow-list li::before {
-  content: ""; position: absolute; top: -44px; left: 34px;
+  content: ""; position: absolute; top: -44px; left: 50px;
   width: 20px; height: 20px; border-radius: 50%;
   background: #000; border: 2px solid var(--c-primary);
   transition: background-color .4s;
 }
 /* 활성 : sub.js(data-auto-active) 가 차례로 .is-active 부여 / 마우스 오버 시 오버한 항목 */
 .qc-flow-list li:hover,
-.qc-flow-list li.is-active { background: rgba(255, 255, 255, .12); border-color: var(--c-primary); translate: 0 -8px; }
+.qc-flow-list li.is-active { border-color: var(--c-primary); background-color: rgba(47, 107, 255, .1); }
 .qc-flow-list li:hover::before,
 .qc-flow-list li.is-active::before { background: var(--c-primary); }
 .qc-step { font-family: var(--ff-en); font-size: 15px; font-weight: 700; letter-spacing: .1em; color: var(--c-primary); }
@@ -658,7 +660,7 @@
    TECH - 연구개발 (tech_research.html)
    외곽선 영문 타이틀 → 이미지·텍스트 지그재그 → 큰 문장 강조
 ================================================== */
-.lab-hero { padding-top: 140px; }
+.lab-hero { padding-top: 140px; text-align: center; }
 .lab-hero-en {
   font-family: var(--ff-en); font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -0.02em;
   -webkit-text-stroke: 1px rgba(255, 255, 255, .6);
@@ -687,14 +689,42 @@
 }
 
 /* 큰 문장 강조 */
+/* 큰 문장 강조 : 위쪽 파란 빛 카드 + 배경 외곽선 영문 + 큰 따옴표 + 키워드 형광펜
+   isolation : 배경 영문(z-index -1)이 카드 배경 위 · 글자 아래에 오도록 */
 .lab-quote {
-  margin-top: 220px; padding: 110px 0;
-  border-top: 1px solid rgba(255, 255, 255, .25); border-bottom: 1px solid rgba(255, 255, 255, .25);
+  position: relative; isolation: isolate; overflow: hidden;
+  margin-top: 220px; padding: 90px 40px 110px;
+  border: 1px solid rgba(255, 255, 255, .12); border-radius: 32px;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 0%, rgba(255, 255, 255, .15), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, 0));
   text-align: center;
 }
+.lab-quote-bg {
+  position: absolute; top: 50%; left: 50%; z-index: -1;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-en); font-size: 300px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .1);
+  pointer-events: none;
+}
+.lab-quote-mark {
+  display: block; height: .55em;
+  font-family: Georgia, "Times New Roman", serif; font-size: 160px; line-height: 1; color: var(--c-primary);
+}
 .lab-quote p { font-family: var(--ff-noto); font-size: 52px; font-weight: 700; line-height: 1.45; letter-spacing: -0.03em; }
-.lab-quote p strong { color: var(--c-primary); }
-.lab-quote span { display: block; margin-top: 30px; font-family: var(--ff-en); font-size: 16px; font-weight: 600; letter-spacing: .14em; color: rgba(255, 255, 255, .5); }
+/* 형광펜 : 섹션이 나타나면(.is-show) 왼쪽부터 칠해짐 */
+.lab-quote p strong {
+  padding: 0 .08em;
+  background: linear-gradient(transparent 60%, rgba(47, 107, 255, .7) 60%) no-repeat left / 0% 100%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  transition: background-size 1.2s var(--ease) .6s;
+}
+.lab-quote.is-show p strong { background-size: 100% 100%; }
+.lab-quote-label {
+  display: inline-block; margin-top: 40px; padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px;
+  font-family: var(--ff-en); font-size: 14px; font-weight: 600; letter-spacing: .14em; color: rgba(255, 255, 255, .75);
+}
 
 /* ==================================================
    TECH - 미래제조계획 (tech_future.html)
@@ -1511,10 +1541,13 @@
   .lab-step-num { font-size: 90px; }
   .lab-step-name { font-size: 32px; }
   .lab-quote p { font-size: 40px; }
+  .lab-quote-bg { font-size: 220px; }
 
   /* 미래제조계획 */
   .fut-vision { grid-template-columns: 340px 1fr; gap: 60px; }
   .fut-card { padding: 40px; }
+  .qc-flow-list li { padding: 40px; }
+  .qc-flow-list li::before { left: 40px; }
 
   .support-word { font-size: 200px; }
   .support-contact-title { font-size: 88px; }
@@ -1638,8 +1671,10 @@
   .lab-step.is-reverse .lab-step-img { order: 0; }
   .lab-step-img img { height: 400px; }
   .lab-step-num { font-size: 70px; }
-  .lab-quote { margin-top: 140px; padding: 80px 0; }
+  .lab-quote { margin-top: 140px; padding: 70px 32px 80px; border-radius: 24px; }
   .lab-quote p { font-size: 32px; }
+  .lab-quote-bg { font-size: 160px; }
+  .lab-quote-mark { font-size: 120px; }
 
   /* 미래제조계획 : 고정 해제, 위(타이틀) / 아래(카드) */
   .sub-content.fut { padding-top: 80px; }
@@ -1863,7 +1898,7 @@
   .qc-badge span { font-size: 14px; }
   .qc-flow { margin-top: 100px; }
   .qc-flow-list { grid-template-columns: 1fr; row-gap: 16px; margin-top: 36px; padding-top: 0; }
-  .qc-flow-list li { padding: 28px 24px 30px; border-radius: 14px; }
+  .qc-flow-list li { padding: 28px 24px; border-radius: 16px; }
   .qc-flow-list li::before { display: none; }
   .qc-flow-name { margin-top: 10px; font-size: 21px; }
   .qc-flow-desc { margin-top: 12px; font-size: 16px; }
@@ -1888,10 +1923,12 @@
   .lab-step-desc br { display: none; }
   .lab-tags { margin-top: 20px; gap: 6px; }
   .lab-tags li { padding: 7px 14px; font-size: 13px; }
-  .lab-quote { margin-top: 100px; padding: 60px 0; }
+  .lab-quote { margin-top: 100px; padding: 50px 20px 60px; border-radius: 18px; }
   .lab-quote p { font-size: 22px; }
   .lab-quote p br { display: none; }
-  .lab-quote span { font-size: 13px; }
+  .lab-quote-bg { font-size: 96px; }
+  .lab-quote-mark { font-size: 90px; }
+  .lab-quote-label { margin-top: 28px; padding: 8px 16px; font-size: 12px; }
 
   /* 미래제조계획 */
   .sub-content.fut { padding-top: 50px; }
