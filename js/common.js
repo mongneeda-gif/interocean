@@ -51,12 +51,31 @@ const initHeader = () => {
   onScroll();
 
   // Mobile menu
+  const isMobile = window.matchMedia('(max-width: 1024px)');
+  const subMenus = header.querySelectorAll('.gnb .has-sub');
+
+  // 모바일 2depth : 1depth 를 누르면 펼침 / 다시 누르면 접힘 (하나만 열림)
+  const toggleSub = (li, open) => {
+    li.classList.toggle('is-sub-open', open);
+    li.querySelector(':scope > a').setAttribute('aria-expanded', open);
+  };
+
   const closeMenu = () => {
     header.classList.remove('is-open');
     document.body.classList.remove('is-lock');
     btnMenu.setAttribute('aria-expanded', 'false');
     btnMenu.setAttribute('aria-label', '메뉴 열기');
+    subMenus.forEach((li) => toggleSub(li, false));
   };
+
+  subMenus.forEach((li) => {
+    li.querySelector(':scope > a').addEventListener('click', (e) => {
+      if (!isMobile.matches) return;
+      e.preventDefault();
+      const open = !li.classList.contains('is-sub-open');
+      subMenus.forEach((el) => toggleSub(el, el === li && open));
+    });
+  });
 
   btnMenu.addEventListener('click', () => {
     const open = !header.classList.contains('is-open');
@@ -67,7 +86,11 @@ const initHeader = () => {
     btnMenu.setAttribute('aria-label', '메뉴 닫기');
   });
 
-  header.querySelectorAll('.gnb a').forEach((a) => a.addEventListener('click', closeMenu));
+  // 메뉴 링크 클릭 시 닫기 (모바일에서 2depth 를 여닫는 1depth 는 제외)
+  header.querySelectorAll('.gnb a').forEach((a) => a.addEventListener('click', () => {
+    if (isMobile.matches && a.parentElement.classList.contains('has-sub')) return;
+    closeMenu();
+  }));
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 };
 
