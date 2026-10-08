@@ -519,12 +519,12 @@
   text-align: center;
 }
 .tech-intro-title {
-  font-family: var(--ff-noto); font-size: 88px; font-weight: 700; line-height: 1.3; letter-spacing: -0.03em;
+  font-family: var(--ff-kr); font-size: 88px; font-weight: 700; line-height: 1.3; letter-spacing: -0.03em;
 }
 .tech-intro-title strong { color: var(--c-primary); }
 .tech-intro-desc {
   margin-top: 50px;
-  font-family: var(--ff-noto); font-size: 22px; line-height: 1.6;
+  font-family: var(--ff-kr); font-size: 22px; line-height: 1.6;
 }
 
 .sub-content.tech { padding-top: 110px; }
@@ -565,6 +565,193 @@
 .core-list li:hover .core-num,
 .core-list:not(:hover) li.is-active .core-num { background: var(--c-primary); color: var(--c-white); }
 .core-list li:hover .core-box { background: var(--c-white); }
+
+/* 제조기술 하위 페이지 공통 : 영문 소제목 + 섹션 타이틀 */
+.tech-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--ff-en); font-size: 15px; font-weight: 700; letter-spacing: .14em; color: var(--c-primary);
+}
+.tech-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+.tech-sec-title { margin-top: 18px; font-size: 44px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; }
+.tech-sec-desc {
+  margin-top: 20px;
+  font-family: var(--ff-kr); font-size: 18px; line-height: 1.7; color: rgba(255, 255, 255, .7);
+}
+
+/* ==================================================
+   TECH - 생산 · 품질관리 (tech_quality.html)
+   좌우 분할 히어로 → 가로 4단계 흐름 → 좌측 타이틀 + 검사 항목 격자
+================================================== */
+.sub-content.qc { padding-top: 120px; }
+
+/* 히어로 : 왼쪽 텍스트 / 오른쪽 세로 이미지 + 떠 있는 배지 */
+.qc-hero { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 100px; }
+.qc-hero-title {
+  margin-top: 24px;
+  font-family: var(--ff-kr); font-size: 68px; font-weight: 700; line-height: 1.25; letter-spacing: -0.03em;
+}
+.qc-hero-title strong { color: var(--c-primary); }
+.qc-hero-desc { margin-top: 36px; font-family: var(--ff-kr); font-size: 20px; line-height: 1.7; color: rgba(255, 255, 255, .8); }
+.qc-hero-img { position: relative; }
+.qc-hero-img img { width: 100%; height: 640px; object-fit: cover; border-radius: 24px; background: #1b2233; }
+.qc-badge {
+  position: absolute; left: -60px; bottom: 50px;
+  padding: 28px 34px; border-radius: 18px;
+  background: var(--c-primary); color: var(--c-white);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+}
+.qc-badge em { display: block; font-family: var(--ff-en); font-size: 54px; font-weight: 800; line-height: 1; }
+.qc-badge span { display: block; margin-top: 8px; font-size: 17px; font-weight: 500; }
+
+/* 4단계 흐름 : 카드 위 점 + 가로 연결선 */
+.qc-flow { margin-top: 200px; }
+.qc-flow-list {
+  position: relative;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  margin-top: 70px; padding-top: 44px;
+}
+.qc-flow-list::before {
+  content: ""; position: absolute; top: 9px; left: 0; right: 0;
+  height: 2px; background: rgba(255, 255, 255, .2);
+}
+.qc-flow-list li {
+  position: relative;
+  padding: 40px 34px 46px; border: 1px solid rgba(255, 255, 255, .15); border-radius: 18px;
+  background: rgba(255, 255, 255, .04);
+  transition: background-color .4s, border-color .4s, translate .4s var(--ease);
+}
+.qc-flow-list li::before {
+  content: ""; position: absolute; top: -44px; left: 34px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #000; border: 2px solid var(--c-primary);
+  transition: background-color .4s;
+}
+.qc-flow-list li:hover { background: rgba(47, 107, 255, .12); border-color: var(--c-primary); translate: 0 -8px; }
+.qc-flow-list li:hover::before { background: var(--c-primary); }
+.qc-step { font-family: var(--ff-en); font-size: 15px; font-weight: 700; letter-spacing: .1em; color: var(--c-primary); }
+.qc-flow-name { display: block; margin-top: 16px; font-size: 26px; font-weight: 700; letter-spacing: -0.03em; }
+.qc-flow-desc { margin-top: 20px; font-family: var(--ff-noto); font-size: 17px; line-height: 1.7; color: rgba(255, 255, 255, .7); }
+
+/* 주요 검사 항목 : .sub-row (좌측 타이틀) 안에 3열 격자 */
+.qc-check-list {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, .25);
+}
+.qc-check-list li {
+  min-height: 220px; padding: 36px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, .25);
+}
+.qc-check-list li + li { border-left: 1px solid rgba(255, 255, 255, .25); }
+.qc-check-list li:nth-child(3n + 1) { border-left: 0; }
+.qc-check-list em { font-family: var(--ff-en); font-size: 40px; font-weight: 800; color: rgba(255, 255, 255, .2); transition: color .4s; }
+.qc-check-list li:hover em { color: var(--c-primary); }
+.qc-check-list strong { display: block; margin-top: 24px; font-size: 22px; font-weight: 700; }
+.qc-check-list p { margin-top: 10px; font-family: var(--ff-noto); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .65); }
+
+/* ==================================================
+   TECH - 연구개발 (tech_research.html)
+   외곽선 영문 타이틀 → 이미지·텍스트 지그재그 → 큰 문장 강조
+================================================== */
+.lab-hero { padding-top: 140px; }
+.lab-hero-en {
+  font-family: var(--ff-en); font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -0.02em;
+  color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .6);
+}
+.lab-hero-title { margin-top: 20px; font-family: var(--ff-kr); font-size: 60px; font-weight: 700; letter-spacing: -0.03em; }
+.lab-hero-title strong { color: var(--c-primary); }
+.lab-hero-desc { margin-top: 24px; font-family: var(--ff-kr); font-size: 20px; line-height: 1.7; color: rgba(255, 255, 255, .85); }
+
+.sub-content.lab { padding-top: 0; }
+.lab-intro { padding-top: 180px; text-align: center; }
+
+/* 지그재그 : .is-reverse 는 이미지를 오른쪽으로 */
+.lab-steps { display: flex; flex-direction: column; gap: 140px; margin-top: 110px; }
+.lab-step { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 100px; }
+.lab-step.is-reverse .lab-step-img { order: 2; }
+.lab-step-img { overflow: hidden; border-radius: 24px; background: #1b2233; }
+.lab-step-img img { width: 100%; height: 520px; object-fit: cover; transition: transform 1s var(--ease); }
+.lab-step:hover .lab-step-img img { transform: scale(1.05); }
+.lab-step-num { font-family: var(--ff-en); font-size: 120px; font-weight: 800; line-height: 1; color: var(--c-primary); }
+.lab-step-name { margin-top: 24px; font-size: 38px; font-weight: 700; letter-spacing: -0.03em; }
+.lab-step-desc { margin-top: 20px; font-family: var(--ff-noto); font-size: 19px; line-height: 1.7; color: rgba(255, 255, 255, .75); }
+.lab-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+.lab-tags li {
+  padding: 9px 20px; border: 1px solid rgba(255, 255, 255, .35); border-radius: 999px;
+  font-size: 15px; font-weight: 500;
+}
+
+/* 큰 문장 강조 */
+.lab-quote {
+  margin-top: 220px; padding: 110px 0;
+  border-top: 1px solid rgba(255, 255, 255, .25); border-bottom: 1px solid rgba(255, 255, 255, .25);
+  text-align: center;
+}
+.lab-quote p { font-family: var(--ff-noto); font-size: 52px; font-weight: 700; line-height: 1.45; letter-spacing: -0.03em; }
+.lab-quote p strong { color: var(--c-primary); }
+.lab-quote span { display: block; margin-top: 30px; font-family: var(--ff-en); font-size: 16px; font-weight: 600; letter-spacing: .14em; color: rgba(255, 255, 255, .5); }
+
+/* ==================================================
+   TECH - 미래제조계획 (tech_future.html)
+   좌측 고정 / 우측 카드 → 단계별 로드맵 → 문의 유도
+================================================== */
+.sub-content.fut { padding-top: 140px; }
+
+/* 추진 방향 : 왼쪽 타이틀 고정(sticky) / 오른쪽 카드 스크롤 */
+.fut-vision { display: grid; grid-template-columns: 460px 1fr; gap: 100px; }
+.fut-vision-side { position: sticky; top: calc(var(--header-h) + 40px); align-self: start; }
+.fut-cards { display: flex; flex-direction: column; gap: 24px; }
+.fut-card {
+  display: grid; grid-template-columns: 100px 1fr; gap: 30px;
+  padding: 50px 50px 54px; border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02));
+  border: 1px solid rgba(255, 255, 255, .12);
+  transition: border-color .4s, background-color .4s;
+}
+.fut-card:hover { border-color: var(--c-primary); background-color: rgba(47, 107, 255, .1); }
+.fut-card-num {
+  display: flex; align-items: center; justify-content: center;
+  width: 100px; height: 100px; border-radius: 50%;
+  border: 1px solid var(--c-primary); color: var(--c-primary);
+  font-family: var(--ff-en); font-size: 30px; font-weight: 700;
+  transition: background-color .4s, color .4s;
+}
+.fut-card:hover .fut-card-num { background: var(--c-primary); color: var(--c-white); }
+.fut-card-name { font-size: 30px; font-weight: 700; letter-spacing: -0.03em; }
+.fut-card-desc { margin-top: 14px; font-family: var(--ff-noto); font-size: 18px; line-height: 1.7; color: rgba(255, 255, 255, .72); }
+
+/* 로드맵 : 3단계 가로 진행 (아래로 갈수록 진해지는 막대) */
+.fut-road { margin-top: 220px; text-align: center; }
+.fut-road-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 70px; text-align: left; }
+.fut-road-list > li { display: flex; flex-direction: column; }
+.fut-phase { font-family: var(--ff-en); font-size: 15px; font-weight: 700; letter-spacing: .12em; color: rgba(255, 255, 255, .55); }
+.fut-road-bar { height: 6px; margin-top: 16px; border-radius: 999px; background: var(--c-primary); }
+.fut-road-list > li:nth-child(1) .fut-road-bar { opacity: .35; }
+.fut-road-list > li:nth-child(2) .fut-road-bar { opacity: .65; }
+.fut-road-box { flex: 1; margin-top: 24px; padding: 40px 36px; border-radius: 18px; background: rgba(255, 255, 255, .06); }
+.fut-road-name { font-size: 26px; font-weight: 700; letter-spacing: -0.03em; }
+.fut-road-items { margin-top: 20px; font-family: var(--ff-noto); font-size: 17px; line-height: 1.6; color: rgba(255, 255, 255, .75); }
+.fut-road-items li { position: relative; padding-left: 16px; }
+.fut-road-items li + li { margin-top: 8px; }
+.fut-road-items li::before {
+  content: ""; position: absolute; top: .7em; left: 0;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--c-primary);
+}
+
+/* 문의 유도 */
+.fut-cta {
+  margin-top: 200px; padding: 100px 40px; border-radius: 30px;
+  background: linear-gradient(120deg, var(--c-navy) 0%, var(--c-primary) 100%);
+  text-align: center;
+}
+.fut-cta-title { font-family: var(--ff-noto); font-size: 44px; font-weight: 700; line-height: 1.4; letter-spacing: -0.03em; }
+.fut-cta-btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  height: 64px; margin-top: 40px; padding: 0 40px;
+  border-radius: 999px; background: var(--c-white); color: var(--c-navy);
+  font-size: 19px; font-weight: 700;
+  transition: background-color .3s, color .3s;
+}
+.fut-cta-btn:hover { background: var(--c-deep); color: var(--c-white); }
 
 /* ==================================================
    SUPPORT (기술지원)
@@ -1299,6 +1486,30 @@
   .core-name { width: 220px; font-size: 24px; }
   .core-desc { font-size: 19px; }
 
+  /* 생산 · 품질관리 */
+  .qc-hero { gap: 60px; }
+  .qc-hero-title { font-size: 52px; }
+  .qc-hero-img img { height: 520px; }
+  .qc-badge { left: -30px; }
+  .qc-flow-list { grid-template-columns: repeat(2, 1fr); row-gap: 70px; }
+  .qc-flow-list::before { display: none; }
+  .qc-check-list { grid-template-columns: repeat(2, 1fr); }
+  .qc-check-list li:nth-child(3n + 1) { border-left: 1px solid rgba(255, 255, 255, .25); }
+  .qc-check-list li:nth-child(2n + 1) { border-left: 0; }
+
+  /* 연구개발 */
+  .lab-hero-en { font-size: 80px; }
+  .lab-hero-title { font-size: 46px; }
+  .lab-step { gap: 60px; }
+  .lab-step-img img { height: 420px; }
+  .lab-step-num { font-size: 90px; }
+  .lab-step-name { font-size: 32px; }
+  .lab-quote p { font-size: 40px; }
+
+  /* 미래제조계획 */
+  .fut-vision { grid-template-columns: 340px 1fr; gap: 60px; }
+  .fut-card { padding: 40px; }
+
   .support-word { font-size: 200px; }
   .support-contact-title { font-size: 88px; }
   .support-contact-info { font-size: 34px; }
@@ -1395,6 +1606,43 @@
   .core-list li { gap: 20px; }
   .core-num { width: 90px; height: 90px; font-size: 30px; }
   .core-box { height: 90px; padding: 0 32px; }
+
+  .tech-sec-title { font-size: 32px; }
+  .tech-sec-desc br { display: none; }
+
+  /* 생산 · 품질관리 : 히어로 위(텍스트) / 아래(이미지) */
+  .sub-content.qc { padding-top: 60px; }
+  .qc-hero { grid-template-columns: 1fr; gap: 50px; }
+  .qc-hero-title { font-size: 44px; }
+  .qc-hero-desc { font-size: 18px; }
+  .qc-hero-desc br { display: none; }
+  .qc-hero-img img { height: 440px; }
+  .qc-badge { left: 24px; bottom: 24px; }
+  .qc-flow { margin-top: 130px; }
+
+  /* 연구개발 : 지그재그 → 이미지 위 / 텍스트 아래 */
+  .lab-hero { padding-top: 80px; }
+  .lab-hero-en { font-size: 60px; }
+  .lab-hero-title { font-size: 38px; }
+  .lab-hero-desc { font-size: 18px; }
+  .lab-hero-desc br { display: none; }
+  .lab-intro { padding-top: 120px; }
+  .lab-steps { gap: 90px; margin-top: 70px; }
+  .lab-step { grid-template-columns: 1fr; gap: 36px; }
+  .lab-step.is-reverse .lab-step-img { order: 0; }
+  .lab-step-img img { height: 400px; }
+  .lab-step-num { font-size: 70px; }
+  .lab-quote { margin-top: 140px; padding: 80px 0; }
+  .lab-quote p { font-size: 32px; }
+
+  /* 미래제조계획 : 고정 해제, 위(타이틀) / 아래(카드) */
+  .sub-content.fut { padding-top: 80px; }
+  .fut-vision { grid-template-columns: 1fr; gap: 50px; }
+  .fut-vision-side { position: static; }
+  .fut-road { margin-top: 140px; }
+  .fut-road-list { grid-template-columns: 1fr; gap: 40px; margin-top: 50px; }
+  .fut-cta { margin-top: 140px; padding: 80px 32px; }
+  .fut-cta-title { font-size: 34px; }
 
   .support-sec { height: 900px; padding-top: 100px; }
   .support-heading { font-size: 32px; }
@@ -1594,6 +1842,66 @@
   .core-box { flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; height: auto; min-height: 60px; padding: 14px 18px; border-radius: 10px; }
   .core-name { width: auto; font-size: 18px; }
   .core-desc { font-size: 17px; }
+
+  .tech-eyebrow { font-size: 13px; }
+  .tech-sec-title { margin-top: 12px; font-size: 26px; }
+  .tech-sec-desc { font-size: 17px; }
+
+  /* 생산 · 품질관리 */
+  .sub-content.qc { padding-top: 40px; }
+  .qc-hero-title { font-size: 32px; }
+  .qc-hero-desc { margin-top: 24px; font-size: 17px; }
+  .qc-hero-img img { height: 320px; border-radius: 16px; }
+  .qc-badge { left: 16px; bottom: 16px; padding: 18px 22px; border-radius: 12px; }
+  .qc-badge em { font-size: 36px; }
+  .qc-badge span { font-size: 14px; }
+  .qc-flow { margin-top: 100px; }
+  .qc-flow-list { grid-template-columns: 1fr; row-gap: 16px; margin-top: 36px; padding-top: 0; }
+  .qc-flow-list li { padding: 28px 24px 30px; border-radius: 14px; }
+  .qc-flow-list li::before { display: none; }
+  .qc-flow-name { margin-top: 10px; font-size: 21px; }
+  .qc-flow-desc { margin-top: 12px; font-size: 16px; }
+  .qc-check-list { grid-template-columns: 1fr; }
+  .qc-check-list li:nth-child(n) { min-height: 0; padding: 26px 4px; border-left: 0; }
+  .qc-check-list em { font-size: 28px; }
+  .qc-check-list strong { margin-top: 12px; font-size: 19px; }
+
+  /* 연구개발 */
+  .lab-hero { padding-top: 50px; }
+  .lab-hero-en { font-size: 38px; }
+  .lab-hero-title { margin-top: 12px; font-size: 28px; }
+  .lab-hero-desc { margin-top: 16px; font-size: 16px; }
+  .lab-intro { padding-top: 80px; }
+  .lab-steps { gap: 70px; margin-top: 50px; }
+  .lab-step { gap: 24px; }
+  .lab-step-img { border-radius: 16px; }
+  .lab-step-img img { height: 240px; }
+  .lab-step-num { font-size: 52px; }
+  .lab-step-name { margin-top: 14px; font-size: 24px; }
+  .lab-step-desc { font-size: 17px; }
+  .lab-step-desc br { display: none; }
+  .lab-tags { margin-top: 20px; gap: 6px; }
+  .lab-tags li { padding: 7px 14px; font-size: 13px; }
+  .lab-quote { margin-top: 100px; padding: 60px 0; }
+  .lab-quote p { font-size: 22px; }
+  .lab-quote p br { display: none; }
+  .lab-quote span { font-size: 13px; }
+
+  /* 미래제조계획 */
+  .sub-content.fut { padding-top: 50px; }
+  .fut-vision { gap: 36px; }
+  .fut-card { grid-template-columns: 1fr; gap: 16px; padding: 28px 24px; border-radius: 16px; }
+  .fut-card-num { width: 60px; height: 60px; font-size: 20px; }
+  .fut-card-name { font-size: 21px; }
+  .fut-card-desc { font-size: 16px; }
+  .fut-road { margin-top: 100px; }
+  .fut-road-box { padding: 28px 24px; }
+  .fut-road-name { font-size: 21px; }
+  .fut-road-items { font-size: 16px; }
+  .fut-cta { margin-top: 100px; padding: 56px 20px; border-radius: 20px; }
+  .fut-cta-title { font-size: 24px; }
+  .fut-cta-title br { display: none; }
+  .fut-cta-btn { height: 52px; margin-top: 28px; padding: 0 28px; font-size: 16px; }
 
   .sub-top.no-lnb { padding-bottom: 36px; }
   .sub-title { word-break: keep-all; }
