@@ -87,6 +87,45 @@ document.addEventListener('DOMContentLoaded', () => {
     updateExpand();
   }
 
+  /* ---------- 순차 활성화 : [data-auto-active="간격(ms)"] ----------
+     목록의 자식(li)에 차례로 .is-active 부여 (마우스 오버한 것처럼 하나씩 강조)
+     - 화면에 보일 때만 진행, 목록에 마우스를 올리면 멈추고 오버한 항목부터 이어서 진행
+     - 강조 스타일은 CSS 에서 li:hover 와 li.is-active 를 함께 지정 */
+  document.querySelectorAll('[data-auto-active]').forEach((list) => {
+    const items = [...list.children];
+    if (items.length < 2) return;
+    const delay = Number(list.dataset.autoActive) || 2000;
+    let index = 0;
+    let timer = null;
+    let inView = false;
+    let hovering = false;
+
+    const setActive = (i) => {
+      index = (i + items.length) % items.length;
+      items.forEach((el, n) => el.classList.toggle('is-active', n === index));
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const start = () => {
+      if (timer || !inView || hovering) return;
+      timer = setInterval(() => setActive(index + 1), delay);
+    };
+
+    setActive(0);
+    items.forEach((el, n) => el.addEventListener('mouseenter', () => setActive(n)));
+    list.addEventListener('mouseenter', () => { hovering = true; stop(); });
+    list.addEventListener('mouseleave', () => { hovering = false; start(); });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        inView = entry.isIntersecting;
+        if (inView) start(); else stop();
+      }, { threshold: 0.3 }).observe(list);
+    } else {
+      inView = true;
+      start();
+    }
+  });
+
   /* ---------- 연혁 : 현재 보고 있는 연대 메뉴 활성화 ----------
      화면 위에서 40% 지점을 지난 마지막 연대(.history-decade)를 현재 연대로 판단 */
   const historyLinks = document.querySelectorAll('.history-nav a');

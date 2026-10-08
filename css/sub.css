@@ -568,10 +568,8 @@
 
 /* 제조기술 하위 페이지 공통 : 영문 소제목 + 섹션 타이틀 */
 .tech-eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--ff-en); font-size: 15px; font-weight: 700; letter-spacing: .14em; color: var(--c-primary);
 }
-.tech-eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
 .tech-sec-title { margin-top: 18px; font-size: 44px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; }
 .tech-sec-desc {
   margin-top: 20px;
@@ -626,8 +624,11 @@
   background: #000; border: 2px solid var(--c-primary);
   transition: background-color .4s;
 }
-.qc-flow-list li:hover { background: rgba(47, 107, 255, .12); border-color: var(--c-primary); translate: 0 -8px; }
-.qc-flow-list li:hover::before { background: var(--c-primary); }
+/* 활성 : sub.js(data-auto-active) 가 차례로 .is-active 부여 / 마우스 오버 시 오버한 항목 */
+.qc-flow-list li:hover,
+.qc-flow-list li.is-active { background: rgba(255, 255, 255, .12); border-color: var(--c-primary); translate: 0 -8px; }
+.qc-flow-list li:hover::before,
+.qc-flow-list li.is-active::before { background: var(--c-primary); }
 .qc-step { font-family: var(--ff-en); font-size: 15px; font-weight: 700; letter-spacing: .1em; color: var(--c-primary); }
 .qc-flow-name { display: block; margin-top: 16px; font-size: 26px; font-weight: 700; letter-spacing: -0.03em; }
 .qc-flow-desc { margin-top: 20px; font-family: var(--ff-noto); font-size: 17px; line-height: 1.7; color: rgba(255, 255, 255, .7); }
@@ -640,11 +641,16 @@
 .qc-check-list li {
   min-height: 220px; padding: 36px 30px;
   border-bottom: 1px solid rgba(255, 255, 255, .25);
+  transition: background-color .4s;
 }
+/* 활성 : sub.js(data-auto-active) 가 차례로 .is-active 부여 / 마우스 오버 시 오버한 항목 */
+.qc-check-list li:hover,
+.qc-check-list li.is-active { background: rgba(255, 255, 255, .1); }
 .qc-check-list li + li { border-left: 1px solid rgba(255, 255, 255, .25); }
 .qc-check-list li:nth-child(3n + 1) { border-left: 0; }
 .qc-check-list em { font-family: var(--ff-en); font-size: 40px; font-weight: 800; color: rgba(255, 255, 255, .2); transition: color .4s; }
-.qc-check-list li:hover em { color: var(--c-primary); }
+.qc-check-list li:hover em,
+.qc-check-list li.is-active em { color: var(--c-primary); }
 .qc-check-list strong { display: block; margin-top: 24px; font-size: 22px; font-weight: 700; }
 .qc-check-list p { margin-top: 10px; font-family: var(--ff-noto); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .65); }
 
@@ -655,7 +661,7 @@
 .lab-hero { padding-top: 140px; }
 .lab-hero-en {
   font-family: var(--ff-en); font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -0.02em;
-  color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .6);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .6);
 }
 .lab-hero-title { margin-top: 20px; font-family: var(--ff-kr); font-size: 60px; font-weight: 700; letter-spacing: -0.03em; }
 .lab-hero-title strong { color: var(--c-primary); }
@@ -1862,7 +1868,7 @@
   .qc-flow-name { margin-top: 10px; font-size: 21px; }
   .qc-flow-desc { margin-top: 12px; font-size: 16px; }
   .qc-check-list { grid-template-columns: 1fr; }
-  .qc-check-list li:nth-child(n) { min-height: 0; padding: 26px 4px; border-left: 0; }
+  .qc-check-list li:nth-child(n) { min-height: 0; padding: 26px 16px; border-left: 0; }
   .qc-check-list em { font-size: 28px; }
   .qc-check-list strong { margin-top: 12px; font-size: 19px; }
 
