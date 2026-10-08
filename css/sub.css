@@ -255,12 +255,22 @@
 /* ==================================================
    CI
 ================================================== */
+/* 연구개발 하단 .lab-quote 와 같은 박스 스타일 : 위쪽 빛 카드 + 배경 외곽선 영문
+   isolation : 배경 영문(z-index -1)이 카드 배경 위 · 글자 아래에 오도록 */
 .ci-intro {
-  position: relative;
+  position: relative; isolation: isolate; overflow: hidden;
   padding: 90px 200px 95px;
-  /* 카탈로그 웹하드 박스(.cat-webhard)와 같은 스타일 : 반투명 배경 + 얇은 테두리 */
-  border: 1px solid rgba(255, 255, 255, .12); border-radius: 24px;
-  background: linear-gradient(160deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .02));
+  border: 1px solid rgba(255, 255, 255, .12); border-radius: 32px;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 0%, rgba(255, 255, 255, .15), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, 0));
+}
+.ci-intro-bg {
+  position: absolute; top: 50%; left: 50%; z-index: -1;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-en); font-size: 300px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .1);
+  pointer-events: none;
 }
 .ci-intro-logo { display: flex; justify-content: center; }
 .ci-intro-logo img { width: 450px; height: auto; }
@@ -640,19 +650,53 @@
   display: grid; grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid rgba(255, 255, 255, .25);
 }
+/* 칸 디자인 : 오른쪽 위 체크 아이콘(::before 원 + ::after 체크) / 위쪽 진행 막대(background-image)
+   --check-time : 진행 막대가 차는 시간 = html 의 data-auto-active 간격과 맞춤 */
 .qc-check-list li {
+  --check-time: 3s;
+  position: relative;
   min-height: 220px; padding: 36px 30px;
   border-bottom: 1px solid rgba(255, 255, 255, .25);
-  transition: background-color .4s;
+  background: linear-gradient(var(--c-primary), var(--c-primary)) no-repeat left top / 0% 3px;
+  transition: background-color .4s, background-size 0s;
 }
-/* 활성 : sub.js(data-auto-active) 가 차례로 .is-active 부여 / 마우스 오버 시 오버한 항목 */
+/* 활성 : sub.js(data-auto-active) 가 차례로 .is-active 부여 / 마우스 오버 시 오버한 항목
+   진행 막대는 --check-time 동안 왼쪽부터 차오름 (비활성 되면 바로 비움) */
 .qc-check-list li:hover,
-.qc-check-list li.is-active { background: rgba(255, 255, 255, .1); }
+.qc-check-list li.is-active {
+  background-color: rgba(255, 255, 255, .1); background-size: 100% 3px;
+  transition: background-color .4s, background-size var(--check-time) linear;
+}
 .qc-check-list li + li { border-left: 1px solid rgba(255, 255, 255, .25); }
 .qc-check-list li:nth-child(3n + 1) { border-left: 0; }
-.qc-check-list em { font-family: var(--ff-en); font-size: 40px; font-weight: 800; color: rgba(255, 255, 255, .2); transition: color .4s; }
+
+/* 체크 아이콘 : 원(::before) + 체크(::after, 꺾인 테두리) → 활성 시 원 채움 + 체크 그려짐 */
+.qc-check-list li::before {
+  content: ""; position: absolute; top: 34px; right: 30px;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .3);
+  transition: background-color .4s, border-color .4s;
+}
+.qc-check-list li::after {
+  content: ""; position: absolute; top: 44px; right: 43px;
+  width: 9px; height: 15px;
+  border-right: 2px solid var(--c-white); border-bottom: 2px solid var(--c-white);
+  transform: rotate(45deg) scale(0); transform-origin: center;
+  transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+}
+.qc-check-list li:hover::before,
+.qc-check-list li.is-active::before { background: var(--c-primary); border-color: var(--c-primary); }
+.qc-check-list li:hover::after,
+.qc-check-list li.is-active::after { transform: rotate(45deg) scale(1); transition-delay: .15s; }
+
+/* 번호 : 외곽선 → 활성 시 파랑으로 채움 */
+.qc-check-list em {
+  font-family: var(--ff-en); font-size: 56px; font-weight: 800; line-height: 1;
+  color: rgba(255,255,255, .5); 
+  transition: color .4s, -webkit-text-stroke-color .4s;
+}
 .qc-check-list li:hover em,
-.qc-check-list li.is-active em { color: var(--c-primary); }
+.qc-check-list li.is-active em { color: var(--c-primary); -webkit-text-stroke-color: var(--c-primary); }
 .qc-check-list strong { display: block; margin-top: 24px; font-size: 22px; font-weight: 700; }
 .qc-check-list p { margin-top: 10px; font-family: var(--ff-noto); font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .65); }
 
@@ -774,12 +818,38 @@
 }
 
 /* 문의 유도 */
+/* 연구개발 하단 .lab-quote 와 같은 스타일 : 위쪽 빛 카드 + 배경 외곽선 영문 + 키워드 형광펜
+   isolation : 배경 영문(z-index -1)이 카드 배경 위 · 글자 아래에 오도록 */
 .fut-cta {
-  margin-top: 200px; padding: 100px 40px; border-radius: 30px;
-  background: linear-gradient(120deg, var(--c-navy) 0%, var(--c-primary) 100%);
+  position: relative; isolation: isolate; overflow: hidden;
+  margin-top: 200px; padding: 90px 40px 110px;
+  border: 1px solid rgba(255, 255, 255, .12); border-radius: 32px;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 0%, rgba(255, 255, 255, .15), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, 0));
   text-align: center;
 }
-.fut-cta-title { font-family: var(--ff-noto); font-size: 44px; font-weight: 700; line-height: 1.4; letter-spacing: -0.03em; }
+.fut-cta-bg {
+  position: absolute; top: 50%; left: 50%; z-index: -1;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-en); font-size: 300px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .1);
+  pointer-events: none;
+}
+.fut-cta-label {
+  display: inline-block; margin-bottom: 36px; padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px;
+  font-family: var(--ff-en); font-size: 14px; font-weight: 600; letter-spacing: .14em; color: rgba(255, 255, 255, .75);
+}
+.fut-cta-title { font-family: var(--ff-noto); font-size: 52px; font-weight: 700; line-height: 1.45; letter-spacing: -0.03em; }
+/* 형광펜 : 섹션이 나타나면(.is-show) 왼쪽부터 칠해짐 */
+.fut-cta-title strong {
+  padding: 0 .08em;
+  background: linear-gradient(transparent 60%, rgba(47, 107, 255, .7) 60%) no-repeat left / 0% 100%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  transition: background-size 1.2s var(--ease) .6s;
+}
+.fut-cta.is-show .fut-cta-title strong { background-size: 100% 100%; }
 .fut-cta-btn {
   display: inline-flex; align-items: center; gap: 12px;
   height: 64px; margin-top: 40px; padding: 0 40px;
@@ -787,7 +857,7 @@
   font-size: 19px; font-weight: 700;
   transition: background-color .3s, color .3s;
 }
-.fut-cta-btn:hover { background: var(--c-deep); color: var(--c-white); }
+.fut-cta-btn:hover { background: var(--c-primary); color: var(--c-white); }
 
 /* ==================================================
    SUPPORT (기술지원)
@@ -1546,6 +1616,7 @@
   /* 미래제조계획 */
   .fut-vision { grid-template-columns: 340px 1fr; gap: 60px; }
   .fut-card { padding: 40px; }
+  .fut-cta-bg { font-size: 220px; }
   .qc-flow-list li { padding: 40px; }
   .qc-flow-list li::before { left: 40px; }
 
@@ -1553,6 +1624,7 @@
   .support-contact-title { font-size: 88px; }
   .support-contact-info { font-size: 34px; }
   .ci-intro { padding: 70px 80px; }
+  .ci-intro-bg { font-size: 200px; }
   .color-gradient, .color-chips li { padding: 0 32px 36px; }
 }
 
@@ -1617,6 +1689,8 @@
   .sub-row { grid-template-columns: 1fr; gap: 24px; margin-top: 100px; }
   .row-title { font-size: 32px; }
 
+  .ci-intro { border-radius: 24px; }
+  .ci-intro-bg { font-size: 140px; }
   .ci-box, .color-gradient, .color-chips { height: 220px; }
   .color-chips dl { font-size: 13px; }
 
@@ -1682,8 +1756,9 @@
   .fut-vision-side { position: static; }
   .fut-road { margin-top: 140px; }
   .fut-road-list { grid-template-columns: 1fr; gap: 40px; margin-top: 50px; }
-  .fut-cta { margin-top: 140px; padding: 80px 32px; }
-  .fut-cta-title { font-size: 34px; }
+  .fut-cta { margin-top: 140px; padding: 70px 32px 80px; border-radius: 24px; }
+  .fut-cta-title { font-size: 32px; }
+  .fut-cta-bg { font-size: 160px; }
 
   .support-sec { height: 900px; padding-top: 100px; }
   .support-heading { font-size: 32px; }
@@ -1836,7 +1911,8 @@
   .row-desc { font-size: 17px; }
   .row-desc br { display: none; }
 
-  .ci-intro { padding: 50px 24px; border-radius: 16px; }
+  .ci-intro { padding: 50px 24px; border-radius: 18px; }
+  .ci-intro-bg { font-size: 80px; }
   .ci-intro-logo img { width: 240px; }
   .ci-intro-txt { margin-top: 36px; font-size: 17px; }
   .ci-intro-txt br { display: none; }
@@ -1904,7 +1980,9 @@
   .qc-flow-desc { margin-top: 12px; font-size: 16px; }
   .qc-check-list { grid-template-columns: 1fr; }
   .qc-check-list li:nth-child(n) { min-height: 0; padding: 26px 16px; border-left: 0; }
-  .qc-check-list em { font-size: 28px; }
+  .qc-check-list em { font-size: 36px; }
+  .qc-check-list li::before { top: 24px; right: 16px; width: 28px; height: 28px; }
+  .qc-check-list li::after { top: 31px; right: 27px; width: 7px; height: 12px; }
   .qc-check-list strong { margin-top: 12px; font-size: 19px; }
 
   /* 연구개발 */
@@ -1941,8 +2019,10 @@
   .fut-road-box { padding: 28px 24px; }
   .fut-road-name { font-size: 21px; }
   .fut-road-items { font-size: 16px; }
-  .fut-cta { margin-top: 100px; padding: 56px 20px; border-radius: 20px; }
-  .fut-cta-title { font-size: 24px; }
+  .fut-cta { margin-top: 100px; padding: 50px 20px 60px; border-radius: 18px; }
+  .fut-cta-title { font-size: 22px; }
+  .fut-cta-bg { font-size: 80px; }
+  .fut-cta-label { margin-bottom: 24px; padding: 8px 16px; font-size: 12px; }
   .fut-cta-title br { display: none; }
   .fut-cta-btn { height: 52px; margin-top: 28px; padding: 0 28px; font-size: 16px; }
 
